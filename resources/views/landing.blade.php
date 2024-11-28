@@ -14,6 +14,8 @@
 
     <title>Rilis Lagu</title>
 
+    <link rel="shortcut icon" href="{{ asset('') }}rilislagu.png" type="image/x-icon">
+
     <!-- slider stylesheet -->
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
@@ -36,9 +38,10 @@
             <div class="container-fluid">
                 <nav class="navbar navbar-expand-lg custom_nav-container ">
                     <a class="navbar-brand" href="index.html">
-                        <img src="{{ asset('') }}landing/images/logo.png" alt="">
+                        {{-- <img src="{{ asset('') }}landing/images/logo.png" alt=""> --}}
+                        <img src="{{ asset('') }}rilislagu.png" alt="">
                         <span>
-                            ELEMENTS
+                            Rilis Lagu
                         </span>
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -67,7 +70,7 @@
                                     <a class="nav-link" href="news.html"> Berita </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Login</a>
+                                    <a class="nav-link" href="{{ url('login') }}">Login</a>
                                 </li>
                             </ul>
                         </div>
@@ -695,26 +698,25 @@
 
 
     <!-- end contact section -->
-
     <!-- info section -->
     <section class="info_section layout_padding">
         <div class="container">
             <div class="info_social">
                 {{-- <div>
-                    <a href="">
-                        <img src="{{ asset('') }}landing/images/fb.png" alt="">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="{{ asset('') }}landing/images/twitter.png" alt="">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="{{ asset('') }}landing/images/linkedin.png" alt="">
-                    </a>
-                </div> --}}
+                <a href="">
+                    <img src="{{ asset('') }}landing/images/fb.png" alt="">
+                </a>
+            </div>
+            <div>
+                <a href="">
+                    <img src="{{ asset('') }}landing/images/twitter.png" alt="">
+                </a>
+            </div>
+            <div>
+                <a href="">
+                    <img src="{{ asset('') }}landing/images/linkedin.png" alt="">
+                </a>
+            </div> --}}
                 <div>
                     <a href="https://www.instagram.com/rilislaguidn">
                         <img src="{{ asset('') }}landing/images/insta.png" alt="">
