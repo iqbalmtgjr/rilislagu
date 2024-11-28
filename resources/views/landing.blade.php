@@ -37,7 +37,7 @@
         <header class="header_section">
             <div class="container-fluid">
                 <nav class="navbar navbar-expand-lg custom_nav-container ">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="{{ url('/login') }}">
                         {{-- <img src="{{ asset('') }}landing/images/logo.png" alt=""> --}}
                         <img src="{{ asset('') }}rilislagu.png" alt="">
                         <span>
@@ -54,20 +54,20 @@
                         <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
                             <ul class="navbar-nav  ">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="index.html">Beranda <span
+                                    <a class="nav-link" href="{{ url('/login') }}">Beranda <span
                                             class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="about.html">Tentang Kami </a>
+                                    <a class="nav-link" href="#">Tentang Kami </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="service.html">Layanan Kami </a>
+                                    <a class="nav-link" href="#">Layanan Kami </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="portfolio.html"> Paket Harga</a>
+                                    <a class="nav-link" href="#"> Paket Harga</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="news.html"> Berita </a>
+                                    <a class="nav-link" href="#"> Berita </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('login') }}">Login</a>
