@@ -2,8 +2,9 @@
 
 @include('layouts.admin.navbar')
 @include('layouts.admin.sidebar')
-<main class="app-main"> <!--begin::App Content Header-->
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
     @yield('content')
-    {{-- {{ isset($slot) ? $slot : null }} --}}
-</main> <!--end::App Main--> <!--begin::Footer-->
+</div>
+<!-- /.content-wrapper -->
 @include('layouts.admin.footer')

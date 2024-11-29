@@ -18,6 +18,9 @@ use App\Http\Controllers\HomeController;
 Route::get('/', function () {
     return view('landing');
 });
+Route::get('/master', function () {
+    return view('dashboard');
+});
 Route::group(['middleware' => 'isTamu'], function () {
     Route::get('/daftar', [AuthController::class, 'register'])->name('register');
     Route::post('/daftar', [AuthController::class, 'postRegister'])->name('postRegister');

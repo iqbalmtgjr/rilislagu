@@ -1,111 +1,67 @@
-<aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark"> <!--begin::Sidebar Brand-->
-    <div class="sidebar-brand"> <!--begin::Brand Link--> <a
-            href="{{ auth()->user()->role == 'staff_mitra' ? url('/transaksi') : url('/home') }}" class="brand-link">
-            <!--begin::Brand Image--> <img src="{{ asset('asset/assets/img/siremoLogo.png') }}" alt="Siremo Logo"
-                class="brand-image opacity-75 shadow"> <!--end::Brand Image-->
-            <!--begin::Brand Text--> <span class="brand-text fw-light">SI<b>REMO</b></span> <!--end::Brand Text-->
-        </a>
-        <!--end::Brand Link-->
-    </div> <!--end::Sidebar Brand--> <!--begin::Sidebar Wrapper-->
-    <div class="sidebar-wrapper">
-        <nav class="mt-2"> <!--begin::Sidebar Menu-->
-            @if (auth()->user()->role != 'staff_mitra')
-                <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu"
-                    data-accordion="false">
-                    <li class="nav-item">
-                        <a href="{{ url('home') }}" class="nav-link {{ request()->is('home') ? 'active' : '' }}"> <i
-                                class="nav-icon bi bi-speedometer"></i>
-                            <p>Dashboard</p>
-                        </a>
-                    </li>
-                </ul>
-            @endif
-            @if (auth()->user()->role == 'super_admin')
-                <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu"
-                    data-accordion="false">
-                    <li class="nav-item">
-                        <a href="{{ url('mitra') }}" class="nav-link {{ request()->is('mitra') ? 'active' : '' }}">
-                            <i class="nav-icon bi bi-intersect"></i>
-                            <p>Mitra</p>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu"
-                    data-accordion="false">
-                    <li class="nav-item">
-                        <a href="{{ url('pengguna') }}"
-                            class="nav-link {{ request()->is('pengguna') ? 'active' : '' }}">
-                            <i class="nav-icon bi bi-people-fill"></i>
-                            <p>Semua Pengguna</p>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu"
-                    data-accordion="false">
-                    <li class="nav-item">
-                        <a href="{{ url('kritik') }}" class="nav-link {{ request()->is('kritik') ? 'active' : '' }}">
-                            <i class="nav-icon bi bi-chat-dots"></i>
-                            <p>Kritik & Saran</p>
-                        </a>
-                    </li>
-                </ul>
-            @endif
-            @if (auth()->user()->role == 'admin_mitra')
-                <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu"
-                    data-accordion="false">
-                    <li class="nav-item">
-                        <a href="{{ url('penggunamitra') }}"
-                            class="nav-link {{ request()->is('penggunamitra') ? 'active' : '' }}">
-                            <i class="nav-icon bi bi-people-fill"></i>
-                            <p>Pengguna</p>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu"
-                    data-accordion="false">
-                    <li class="nav-item">
-                        <a href="{{ url('kendaraan') }}"
-                            class="nav-link {{ request()->is('kendaraan') ? 'active' : '' }}">
-                            <i class="nav-icon bi bi-truck"></i>
-                            <p>Kendaraan</p>
-                        </a>
-                    </li>
-                </ul>
-                {{-- <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu"
-                    data-accordion="false">
-                    <li class="nav-item">
-                        <a href="{{ url('hargasewa') }}"
-                            class="nav-link {{ request()->is('hargasewa') ? 'active' : '' }}">
-                            <i class="nav-icon bi bi-currency-dollar"></i>
-                            <p>Harga Sewa</p>
-                        </a>
-                    </li>
-                </ul> --}}
-            @endif
-            @if (auth()->user()->role == 'admin_mitra' || auth()->user()->role == 'staff_mitra')
-                <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu"
-                    data-accordion="false">
-                    <li class="nav-item">
-                        <a href="{{ url('transaksi') }}"
-                            class="nav-link {{ request()->is('transaksi') ? 'active' : '' }}">
-                            <i class="nav-icon bi bi-cash-stack"></i>
-                            <p>Transaksi</p>
-                        </a>
-                    </li>
-                </ul>
-            @endif
-            @if (auth()->user()->role == 'admin_mitra')
-                <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu"
-                    data-accordion="false">
-                    <li class="nav-item">
-                        <a href="{{ url('riwayat') }}"
-                            class="nav-link {{ request()->is('riwayat') ? 'active' : '' }}">
-                            <i class="nav-icon bi bi-clipboard-data"></i>
-                            <p>Riwayat Transaksi</p>
-                        </a>
-                    </li>
-                </ul>
-            @endif
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link">
+        <img src="{{ asset('') }}rilislagu.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+            style="opacity: .8">
+        <span class="brand-text font-weight-light">RilisLagu.id</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="{{ asset('') }}admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2"
+                    alt="User Image">
+            </div>
+            <div class="info">
+                <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                data-accordion="false">
+                <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+                <li class="nav-item">
+                    <a href="{{ url('dashboard') }}" class="nav-link {{ request()->is('dashboard') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-home"></i>
+                        <p>
+                            Dashboard
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url('berita') }}" class="nav-link {{ request()->is('berita') ? 'active' : '' }}">
+                        <i class="nav-icon far fa-newspaper"></i>
+                        <p>
+                            Berita
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url('kelola-submit-lagu') }}"
+                        class="nav-link {{ request()->is('kelola-submit-lagu') ? 'active' : '' }}">
+                        <i class="nav-icon far fa-file-audio"></i>
+                        <p>
+                            Kelola Submit Lagu
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url('submitlagu') }}"
+                        class="nav-link {{ request()->is('submitlagu') ? 'active' : '' }}">
+                        <i class="nav-icon far fa-plus-square"></i>
+                        <p>
+                            Submit Lagu
+                        </p>
+                    </a>
+                </li>
+            </ul>
         </nav>
+        <!-- /.sidebar-menu -->
     </div>
+    <!-- /.sidebar -->
 </aside>
