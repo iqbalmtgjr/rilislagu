@@ -18,15 +18,23 @@ use App\Http\Controllers\HomeController;
 Route::get('/', function () {
     return view('landing');
 });
-
 Route::group(['middleware' => 'isTamu'], function () {
     Route::get('/daftar', [AuthController::class, 'register'])->name('register');
     Route::post('/daftar', [AuthController::class, 'postRegister'])->name('postRegister');
     Route::get('/login', [AuthController::class, 'login'])->name('login');
     Route::post('/login', [AuthController::class, 'postLogin'])->name('postLogin');
-    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
 Route::group(['middleware' => 'isLogin'], function () {
+    // dashboard
     Route::get('/dashboard', [HomeController::class, 'index']);
+
+    // profil
+
+    // berita
+
+    // submit lagu
+
+    // logout
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });

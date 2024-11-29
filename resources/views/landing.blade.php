@@ -103,7 +103,7 @@
                         dalam skala yang luas dan global. Maksimalkan potensi value karyamu menjadi aset digital abadi
                     </p>
                     <div>
-                        <a href="" class="slider-link">
+                        <a href="{{ url('login') }}" class="slider-link">
                             SUBMIT SEKARANG
                         </a>
                     </div>
