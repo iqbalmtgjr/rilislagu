@@ -28,7 +28,9 @@ class FacebookController extends Controller
 
             if ($finduser) {
                 Auth::login($finduser);
-                return redirect()->intended('home')->with('sukses', 'Selamat Datang di OrderKuy!');
+
+                toastr()->success('Selamat Datang di RilisLagu.id!', 'Halo');
+                return redirect()->intended('dashboard');
             } else {
                 $make_password = Str::random(8);
                 $user = User::updateOrCreate(['email' => $userFacebook->email], [
@@ -43,7 +45,8 @@ class FacebookController extends Controller
                 // Mail::to($user->email)->send(new NotifPendaftaranAkun($user, $make_password));
                 Auth::login($user);
 
-                return redirect()->intended('home')->with('sukses', 'Selamat Datang di OrderKuy!');
+                toastr()->success('Selamat Datang di RilisLagu.id!', 'Halo');
+                return redirect()->intended('dashboard');
             }
         } catch (Exception $e) {
             dd($e->getMessage());

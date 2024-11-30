@@ -21,17 +21,21 @@ class GoogleController extends Controller
     {
         try {
             $userGoogle = Socialite::driver('google')->user();
-            $finduser = User::where('google_id', $userGoogle->id)->first();
+            // dd($userGoogle->getId());
+            $finduser = User::where('google_id', $userGoogle->getId())->first();
 
             if ($finduser) {
                 Auth::login($finduser);
-                return redirect()->intended('home')->with('sukses', 'Selamat Datang di OrderKuy!');
+
+                toastr()->success('Selamat Datang di RilisLagu.id!', 'Haloo');
+                return redirect('/dashboard');
             } else {
-                $make_password = Str::random(8);
+                $make_password = 'qweasdzxc';
+                // $make_password = Str::random(8);
                 $user = User::updateOrCreate(['email' => $userGoogle->email], [
                     'role' => 'user',
                     'name' => $userGoogle->getName(),
-                    'google_id' => $userGoogle->getId(),
+                    'google_id' => $userGoogle->id,
                     'avatar' => $userGoogle->getAvatar(),
                     'password' => Hash::make($make_password)
                 ]);
@@ -39,9 +43,10 @@ class GoogleController extends Controller
                 // $newPelanggan = Pelanggan::create(['user_id' => $user->id]);
 
                 // Mail::to($user->email)->send(new NotifPendaftaranAkun($user, $make_password));
-                // Auth::login($user);
+                Auth::login($user);
 
-                return redirect()->intended('home')->with('sukses', 'Selamat Datang di OrderKuy!');
+                toastr()->success('Selamat Datang di RilisLagu.id!', 'Halo');
+                return redirect('/dashboard');
             }
         } catch (Exception $e) {
             dd($e->getMessage());

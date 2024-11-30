@@ -54,7 +54,7 @@
                         <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
                             <ul class="navbar-nav  ">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="{{ url('/login') }}">Beranda <span
+                                    <a class="nav-link" href="{{ url('/') }}">Beranda <span
                                             class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
@@ -64,10 +64,10 @@
                                     <a class="nav-link" href="#">Layanan Kami </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"> Paket Harga</a>
+                                    <a class="nav-link" href="#">Paket Harga</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"> Berita </a>
+                                    <a class="nav-link" href="#">Berita </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('login') }}">Login</a>

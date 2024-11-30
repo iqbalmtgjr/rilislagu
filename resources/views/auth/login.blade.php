@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="{{ asset('') }}admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('') }}admin/dist/css/adminlte.min.css">
+
+    <link rel="shortcut icon" href="{{ asset('') }}rilislagu.png" type="image/x-icon">
 </head>
 
 <body class="hold-transition login-page">
@@ -76,10 +78,10 @@
                 </form>
 
                 <div class="social-auth-links text-center mt-2 mb-3">
-                    <a href="#" class="btn btn-block btn-primary">
+                    <a href="{{ route('auth.facebook') }}" class="btn btn-block btn-primary">
                         <i class="fab fa-facebook mr-2"></i> Masuk dengan Facebook
                     </a>
-                    <a href="#" class="btn btn-block btn-danger">
+                    <a href="{{ route('auth.google') }}" class="btn btn-block btn-danger">
                         <i class="fab fa-google-plus mr-2"></i> Masuk dengan Google
                     </a>
                 </div>
