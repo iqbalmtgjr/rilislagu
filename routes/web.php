@@ -61,6 +61,11 @@ Route::group(['middleware' => 'isLogin'], function () {
 
     // berita
     Route::get('/kelola-berita', [BeritaController::class, 'index']);
+    Route::get('/kelola-berita/tambah', [BeritaController::class, 'create']);
+    Route::get('/kelola-berita/edit/{id}', [BeritaController::class, 'edit'])->name('berita.edit');
+    Route::post('/kelola-berita/post', [BeritaController::class, 'store'])->name('berita.post');
+    Route::post('/kelola-berita/update/{id}', [BeritaController::class, 'update'])->name('berita.update');
+    Route::get('/kelola-berita/destroy/{id}', [BeritaController::class, 'destroy'])->name('berita.destroy');
 
     // submit lagu
 

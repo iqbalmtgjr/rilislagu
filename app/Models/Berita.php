@@ -10,13 +10,5 @@ class Berita extends Model
     use HasFactory;
 
     protected $table = 'berita';
-    protected $fillable = [
-        'judul',
-        'isi',
-        'slug',
-        'foto',
-        'kategori',
-        'status',
-    ];
-    protected $garduded = ['id', 'created_at', 'updated_at'];
+    protected $guarded = ['id'];
 }

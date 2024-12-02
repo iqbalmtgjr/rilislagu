@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use DOMDocument;
 use App\Models\Berita;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class BeritaController extends Controller
 {
@@ -21,7 +24,7 @@ class BeritaController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.berita.tambah');
     }
 
     /**
@@ -29,23 +32,70 @@ class BeritaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+        $validator = Validator::make($request->all(), [
+            'judul' => 'required|max:50',
+            'isi' => 'required',
+            'gambar' => 'mimes:jpeg,jpg,png',
+        ]);
+
+        if ($validator->fails()) {
+            toastr()->error('Ada kesalahan inputan', 'Gagal');
+            return redirect()
+                ->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $dom_isi = new DOMDocument();
+        $dom_isi->loadHTML($request->isi, 10000);
+
+        if ($dom_isi->getElementsByTagName('img')->length > 0) {
+            $image = $dom_isi->getElementsByTagName('img');
+
+            foreach ($image as $key => $img) {
+                $src = $img->getAttribute('src');
+                // $data = '';
+                // if (strpos($src, ';') !== false && strpos($src, ',') !== false) {
+                $data = base64_decode(explode(',', explode(';', $src)[1])[1]);
+                // }
+                $image_name =  '/gambar_isi/' . time() . $key . '.png';
+
+                file_put_contents(public_path('admin/berita') . $image_name, $data);
+
+                $img->removeAttribute('src');
+                $img->setAttribute('src', 'http://localhost:8000/admin/berita' . $image_name);
+            }
+        }
+        $isi = $dom_isi->saveHTML();
+
+        if ($request->file('gambar')) {
+            $nama_foto = round(microtime(true) * 1000) . '-' . str_replace(' ', '-', $request->file('gambar')->getClientOriginalName());
+            $request->file('gambar')->move(public_path('admin/berita/gambar'), $nama_foto);
+            Berita::create([
+                'judul' => $request->judul,
+                'isi' => $isi,
+                'gambar' => $nama_foto,
+                'is_published' => 1,
+                'slug' => Str::of($request->judul)->slug('-'),
+            ]);
+        } else {
+            Berita::create([
+                'judul' => $request->judul,
+                'isi' => $isi,
+                'is_published' => 1,
+                'slug' => Str::of($request->judul)->slug('-'),
+            ]);
+        }
+
+        toastr()->success('Berhasil tambah berita', 'Sukses');
+        return redirect('/kelola-berita');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
-        //
+        $data = Berita::find($id);
+        return view('admin.berita.edit', compact('data'));
     }
 
     /**
@@ -53,7 +103,65 @@ class BeritaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'judul' => 'required|max:50',
+            'isi' => 'required',
+            'gambar' => 'mimes:jpeg,jpg,png',
+        ]);
+
+        if ($validator->fails()) {
+            toastr()->error('Ada kesalahan inputan', 'Gagal');
+            return redirect()
+                ->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $dom_isi = new DOMDocument();
+        $dom_isi->loadHTML($request->isi, 10000);
+
+        if ($dom_isi->getElementsByTagName('img')->length > 0) {
+            $image = $dom_isi->getElementsByTagName('img');
+
+            foreach ($image as $key => $img) {
+                $src = $img->getAttribute('src');
+                // $data = '';
+                // if (strpos($src, ';') !== false && strpos($src, ',') !== false) {
+                $data = base64_decode(explode(',', explode(';', $src)[1])[1]);
+                // }
+                $image_name =  '/gambar_isi/' . time() . $key . '.png';
+
+                file_put_contents(public_path('admin/berita') . $image_name, $data);
+
+                $img->removeAttribute('src');
+                $img->setAttribute('src', 'http://localhost:8000/admin/berita' . $image_name);
+            }
+        }
+
+
+        $isi = $dom_isi->saveHTML();
+
+        if ($request->file('gambar')) {
+            $nama_foto = round(microtime(true) * 1000) . '-' . str_replace(' ', '-', $request->file('gambar')->getClientOriginalName());
+            $request->file('gambar')->move(public_path('admin/berita/gambar'), $nama_foto);
+            Berita::find($id)->update([
+                'judul' => $request->judul,
+                'isi' => $isi,
+                'gambar' => $nama_foto,
+                'is_published' => 1,
+                'slug' => Str::of($request->judul)->slug('-'),
+            ]);
+        } else {
+            Berita::find($id)->update([
+                'judul' => $request->judul,
+                'isi' => $isi,
+                'is_published' => 1,
+                'slug' => Str::of($request->judul)->slug('-'),
+            ]);
+        }
+
+        toastr()->success('Berhasil update berita', 'Sukses');
+        return redirect('/kelola-berita');
     }
 
     /**
@@ -61,6 +169,14 @@ class BeritaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // dd($id);
+        $data = Berita::find($id);
+        if ($data->gambar) {
+            @unlink(public_path('admin/berita/gambar/' . $data->gambar));
+        }
+        $data->delete();
+
+        toastr()->success('Berhasil hapus berita', 'Sukses');
+        return redirect('/kelola-berita');
     }
 }
