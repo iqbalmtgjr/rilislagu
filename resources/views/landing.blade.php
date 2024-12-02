@@ -31,11 +31,11 @@
         <div class="img-box">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="{{ asset('') }}landing/images/slider-img.jpg" alt="">
-                    </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('') }}landing/images/slider-img.jpg" alt="">
+                        <img src="{{ asset('') }}landing/images/hero.png" alt="">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{{ asset('') }}landing/images/hero2.png" alt="">
                     </div>
                     <div class="carousel-item">
                         <img src="{{ asset('') }}landing/images/slider-img.jpg" alt="">
