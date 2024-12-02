@@ -34,7 +34,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url('berita') }}" class="nav-link {{ request()->is('berita') ? 'active' : '' }}">
+                    <a href="{{ url('kelola-berita') }}"
+                        class="nav-link {{ request()->is('kelola-berita') ? 'active' : '' }}">
                         <i class="nav-icon far fa-newspaper"></i>
                         <p>
                             Berita

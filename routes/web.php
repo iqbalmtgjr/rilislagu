@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\FacebookController;
@@ -24,7 +25,14 @@ Route::get('/master', function () {
     return view('dashboard');
 });
 
-
+// Landing Page
+Route::get('/layanan-kami', function () {
+    return view('landing.layanan-kami');
+});
+Route::get('/paket-harga', function () {
+    return view('landing.paket-harga');
+});
+// Route::get('/berita', );
 
 Route::group(['middleware' => 'isTamu'], function () {
     Route::get('/daftar', [AuthController::class, 'register'])->name('register');
@@ -52,6 +60,7 @@ Route::group(['middleware' => 'isLogin'], function () {
     // profil
 
     // berita
+    Route::get('/kelola-berita', [BeritaController::class, 'index']);
 
     // submit lagu
 
