@@ -188,7 +188,7 @@
                             <img src="{{ asset('') }}admin/berita/gambar/{{ $item->gambar }}" alt="">
                         </div>
                         <div class="action-box">
-                            <div class="action">
+                            {{-- <div class="action">
                                 <a href="">
                                     <img src="{{ asset('') }}landing/images/like.png" alt="">
                                 </a>
@@ -198,7 +198,7 @@
                                 <a href="">
                                     <img src="{{ asset('') }}landing/images/share.png" alt="">
                                 </a>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="detail-box">
                             <h4>
@@ -208,7 +208,7 @@
                                 {!! Str::limit(strip_tags($item->isi), 100) !!}
                             </p>
                             <div>
-                                <a href="">
+                                <a href="{{ route('berita.show', $item->slug) }}">
                                     Baca Selengkapnya
                                 </a>
                             </div>

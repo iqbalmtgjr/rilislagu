@@ -23,6 +23,8 @@ use App\Http\Controllers\FacebookController;
 Route::get('/', [LandingController::class, 'index']);
 Route::get('/layanan-kami', [LandingController::class, 'layananKami']);
 Route::get('/paket-harga', [LandingController::class, 'paketHarga']);
+Route::get('/artikel', [BeritaController::class, 'artikel']);
+Route::get('/artikel/{slug}', [BeritaController::class, 'beritaSatuan'])->name('berita.show');
 
 Route::group(['middleware' => 'isTamu'], function () {
     Route::get('/daftar', [AuthController::class, 'register'])->name('register');

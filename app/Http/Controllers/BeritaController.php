@@ -19,6 +19,18 @@ class BeritaController extends Controller
         return view('admin.berita.index', compact('data'));
     }
 
+    public function artikel()
+    {
+        $data = Berita::where('is_published', 1)->orderByDesc('created_at')->get();
+        return view('landing.berita.index', compact('data'));
+    }
+
+    public function beritaSatuan($slug)
+    {
+        $data = Berita::where('slug', $slug)->first();
+        return view('landing.berita.detail', compact('data'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */

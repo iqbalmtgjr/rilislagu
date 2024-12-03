@@ -67,6 +67,8 @@
                                             <td>
                                                 <a href="{{ route('berita.edit', $item->id) }}"
                                                     class="btn btn-success btn-sm">Edit</a>
+                                                <a href="{{ route('berita.show', $item->slug) }}"
+                                                    class="btn btn-info btn-sm" target="_blank">Lihat</a>
                                                 <button data-id="{{ $item->id }}"
                                                     class="btn btn-danger btn-sm hapus">Hapus</button>
                                             </td>
