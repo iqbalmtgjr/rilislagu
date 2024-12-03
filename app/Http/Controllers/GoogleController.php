@@ -20,9 +20,9 @@ class GoogleController extends Controller
     public function handleGoogleCallback()
     {
         try {
-            $userGoogle = Socialite::driver('google')->user();
-            // dd($userGoogle->getId());
-            $finduser = User::where('google_id', $userGoogle->getId())->first();
+            $userGoogle = Socialite::driver('google')->stateless()->user();
+            // dd($userGoogle);
+            $finduser = User::where('google_id', $userGoogle->id)->first();
 
             if ($finduser) {
                 Auth::login($finduser);
@@ -32,11 +32,13 @@ class GoogleController extends Controller
             } else {
                 $make_password = 'qweasdzxc';
                 // $make_password = Str::random(8);
-                $user = User::updateOrCreate(['email' => $userGoogle->email], [
-                    'role' => 'user',
-                    'name' => $userGoogle->getName(),
+                $user = User::updateOrCreate([
                     'google_id' => $userGoogle->id,
-                    'avatar' => $userGoogle->getAvatar(),
+                ], [
+                    'name' => $userGoogle->getName(),
+                    'role' => 'user',
+                    'email' => $userGoogle->email,
+                    'avatar' => $userGoogle->avatar,
                     'password' => Hash::make($make_password)
                 ]);
 

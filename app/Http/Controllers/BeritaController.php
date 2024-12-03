@@ -15,7 +15,7 @@ class BeritaController extends Controller
      */
     public function index()
     {
-        $data = Berita::all();
+        $data = Berita::latest()->get();
         return view('admin.berita.index', compact('data'));
     }
 
@@ -34,7 +34,7 @@ class BeritaController extends Controller
     {
         // dd($request->all());
         $validator = Validator::make($request->all(), [
-            'judul' => 'required|max:50',
+            'judul' => 'required|max:200',
             'isi' => 'required',
             'gambar' => 'mimes:jpeg,jpg,png',
         ]);
@@ -96,6 +96,20 @@ class BeritaController extends Controller
     {
         $data = Berita::find($id);
         return view('admin.berita.edit', compact('data'));
+    }
+
+    public function status($id)
+    {
+        $data = Berita::find($id);
+        if ($data->is_published == 1) {
+            $data->is_published = 0;
+        } else {
+            $data->is_published = 1;
+        }
+        $data->save();
+
+        toastr()->success('Berhasil ubah status', 'Sukses');
+        return redirect()->back();
     }
 
     /**

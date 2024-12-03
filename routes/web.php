@@ -2,9 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\LandingController;
 use App\Http\Controllers\FacebookController;
 
 /*
@@ -18,21 +19,10 @@ use App\Http\Controllers\FacebookController;
 |
 */
 
-Route::get('/', function () {
-    return view('landing');
-});
-Route::get('/master', function () {
-    return view('dashboard');
-});
-
 // Landing Page
-Route::get('/layanan-kami', function () {
-    return view('landing.layanan-kami');
-});
-Route::get('/paket-harga', function () {
-    return view('landing.paket-harga');
-});
-// Route::get('/berita', );
+Route::get('/', [LandingController::class, 'index']);
+Route::get('/layanan-kami', [LandingController::class, 'layananKami']);
+Route::get('/paket-harga', [LandingController::class, 'paketHarga']);
 
 Route::group(['middleware' => 'isTamu'], function () {
     Route::get('/daftar', [AuthController::class, 'register'])->name('register');
@@ -65,6 +55,7 @@ Route::group(['middleware' => 'isLogin'], function () {
     Route::get('/kelola-berita/edit/{id}', [BeritaController::class, 'edit'])->name('berita.edit');
     Route::post('/kelola-berita/post', [BeritaController::class, 'store'])->name('berita.post');
     Route::post('/kelola-berita/update/{id}', [BeritaController::class, 'update'])->name('berita.update');
+    Route::get('/kelola-berita/status/{id}', [BeritaController::class, 'status'])->name('berita.status');
     Route::get('/kelola-berita/destroy/{id}', [BeritaController::class, 'destroy'])->name('berita.destroy');
 
     // submit lagu

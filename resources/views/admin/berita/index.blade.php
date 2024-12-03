@@ -53,9 +53,15 @@
                                             <td>{{ $item->slug }}</td>
                                             <td>
                                                 @if ($item->is_published == 1)
-                                                    <span class="badge badge-success">Publish</span>
+                                                    <a href="javascript:void(0);" data-id="{{ $item->id }}"
+                                                        class="status_publish">
+                                                        <span class="badge badge-success">Publish</span>
+                                                    </a>
                                                 @else
-                                                    <span class="badge badge-danger">Draft</span>
+                                                    <a href="javascript:void(0);" data-id="{{ $item->id }}"
+                                                        class="status_draft">
+                                                        <span class="badge badge-danger">Draft</span>
+                                                    </a>
                                                 @endif
                                             </td>
                                             <td>
@@ -124,6 +130,58 @@
                     Swal.fire({
                         title: "Dihapus!",
                         text: "Data berhasil dihapus.",
+                        icon: "success"
+                    });
+                    window.location.href = url;
+                }
+            });
+        });
+
+        $('.status_publish').click(function(e) {
+            e.preventDefault();
+            let id = $(this).data('id');
+            let url = '{{ route('berita.status', ':id') }}';
+            url = url.replace(':id', id);
+
+            Swal.fire({
+                title: "Apakah anda yakin",
+                text: "Ingin ubah ke draft?",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Ya!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: "Diubah!",
+                        text: "Status berhasil diubah.",
+                        icon: "success"
+                    });
+                    window.location.href = url;
+                }
+            });
+        });
+
+        $('.status_draft').click(function(e) {
+            e.preventDefault();
+            let id = $(this).data('id');
+            let url = '{{ route('berita.status', ':id') }}';
+            url = url.replace(':id', id);
+
+            Swal.fire({
+                title: "Apakah anda yakin",
+                text: "Ingin ubah ke publish?",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Ya!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: "Diubah!",
+                        text: "Status berhasil diubah.",
                         icon: "success"
                     });
                     window.location.href = url;

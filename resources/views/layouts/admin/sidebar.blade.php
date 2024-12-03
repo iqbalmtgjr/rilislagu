@@ -11,8 +11,22 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="{{ asset('') }}admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2"
-                    alt="User Image">
+                @if (Auth::user()->avatar == null)
+                    <img src="{{ asset('') }}admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2 lozad"
+                        alt="User Image">
+                @else
+                    @if (Auth::user()->google_id != null || Auth::user()->facebook_id != null)
+                        @if (file_exists('gambar/' . auth()->user()->avatar))
+                            <img class="img-circle elevation-2 lozad"
+                                src="{{ asset('') . 'gambar/' . auth()->user()->avatar }}" alt="user" />
+                        @else
+                            <img class="img-circle elevation-2 lozad" src="{{ Auth::user()->avatar }}" alt="user" />
+                        @endif
+                    @else
+                        <img class="img-circle elevation-2 lozad"
+                            src="{{ asset('') . 'gambar/' . auth()->user()->avatar }}" alt="user" />
+                    @endif
+                @endif
             </div>
             <div class="info">
                 <a href="#" class="d-block">{{ Auth::user()->name }}</a>

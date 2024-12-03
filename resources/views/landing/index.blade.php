@@ -165,197 +165,57 @@
 
 <!-- end service section -->
 
-<!-- portfolio section -->
-
-{{-- <section class="portfolio_section">
-        <div class="container">
-            <div class="custom_heading-container">
-                <h2>
-                    Portfolio
-                </h2>
-                <hr>
-            </div>
-            <p>
-                There are many variations of passages of Lorem Ipsum available, but the majority
-            </p>
-            <div class="layout_padding2-top">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="img-box">
-                            <img src="{{ asset('') }}landing/images/p-1.jpg" alt="">
-                            <a href="">
-                                <img src="{{ asset('') }}landing/images/link.png" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="img-box">
-                            <img src="{{ asset('') }}landing/images/p-2.jpg" alt="">
-                            <a href="">
-                                <img src="{{ asset('') }}landing/images/link.png" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="img-box">
-                            <img src="{{ asset('') }}landing/images/p-3.jpg" alt="">
-                            <a href="">
-                                <img src="{{ asset('') }}landing/images/link.png" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="img-box">
-                            <img src="{{ asset('') }}landing/images/p-4.jpg" alt="">
-                            <a href="">
-                                <img src="{{ asset('') }}landing/images/link.png" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="img-box">
-                            <img src="{{ asset('') }}landing/images/p-5.jpg" alt="">
-                            <a href="">
-                                <img src="{{ asset('') }}landing/images/link.png" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="img-box">
-                            <img src="{{ asset('') }}landing/images/p-6.jpg" alt="">
-                            <a href="">
-                                <img src="{{ asset('') }}landing/images/link.png" alt="">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-
-<!-- end portfolio section -->
 <!-- news section -->
-
 <section class="news_section layout_padding">
     <div class="container">
         <div class="d-flex flex-column align-items-end">
             <div class="custom_heading-container">
                 <hr>
                 <h2>
-                    Berita Terbaru
+                    Artikel Terbaru
                 </h2>
 
             </div>
             <p>
-                Ini merupakan berita terbaru saat ini
+                Ini merupakan artikel terbaru saat ini
             </p>
         </div>
         <div class="row">
-            <div class="col-md-4">
-                <div class="box">
-                    <div class="img-box">
-                        <img src="{{ asset('') }}landing/images/n-1.jpg" alt="">
-                    </div>
-                    <div class="action-box">
-                        <div class="action">
-                            <a href="">
-                                <img src="{{ asset('') }}landing/images/like.png" alt="">
-                            </a>
-                            <a href="">
-                                <img src="{{ asset('') }}landing/images/comment.png" alt="">
-                            </a>
-                            <a href="">
-                                <img src="{{ asset('') }}landing/images/share.png" alt="">
-                            </a>
+            @foreach ($berita as $item)
+                <div class="col-md-4">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="{{ asset('') }}admin/berita/gambar/{{ $item->gambar }}" alt="">
                         </div>
-                    </div>
-                    <div class="detail-box">
-                        <h4>
-                            elements good design
-                        </h4>
-                        <p>
-                            It is a long established fact that a reader will be distracted by the readable content
-                            of a page when
-                            looking at its layout. The point of using Lorem
-                        </p>
-                        <div>
-                            <a href="">
-                                Read More
-                            </a>
+                        <div class="action-box">
+                            <div class="action">
+                                <a href="">
+                                    <img src="{{ asset('') }}landing/images/like.png" alt="">
+                                </a>
+                                <a href="">
+                                    <img src="{{ asset('') }}landing/images/comment.png" alt="">
+                                </a>
+                                <a href="">
+                                    <img src="{{ asset('') }}landing/images/share.png" alt="">
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="box">
-                    <div class="img-box">
-                        <img src="{{ asset('') }}landing/images/n-2.jpg" alt="">
-                    </div>
-                    <div class="action-box">
-                        <div class="action">
-                            <a href="">
-                                <img src="{{ asset('') }}landing/images/like.png" alt="">
-                            </a>
-                            <a href="">
-                                <img src="{{ asset('') }}landing/images/comment.png" alt="">
-                            </a>
-                            <a href="">
-                                <img src="{{ asset('') }}landing/images/share.png" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="detail-box">
-                        <h4>
-                            elements good design
-                        </h4>
-                        <p>
-                            It is a long established fact that a reader will be distracted by the readable content
-                            of a page when
-                            looking at its layout. The point of using Lorem
-                        </p>
-                        <div>
-                            <a href="">
-                                Read More
-                            </a>
+                        <div class="detail-box">
+                            <h4>
+                                {{ $item->judul }}
+                            </h4>
+                            <p>
+                                {!! Str::limit(strip_tags($item->isi), 100) !!}
+                            </p>
+                            <div>
+                                <a href="">
+                                    Baca Selengkapnya
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="box">
-                    <div class="img-box">
-                        <img src="{{ asset('') }}landing/images/n-3.png" alt="">
-                    </div>
-                    <div class="action-box">
-                        <div class="action">
-                            <a href="">
-                                <img src="{{ asset('') }}landing/images/like.png" alt="">
-                            </a>
-                            <a href="">
-                                <img src="{{ asset('') }}landing/images/comment.png" alt="">
-                            </a>
-                            <a href="">
-                                <img src="{{ asset('') }}landing/images/share.png" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="detail-box">
-                        <h4>
-                            elements good design
-                        </h4>
-                        <p>
-                            It is a long established fact that a reader will be distracted by the readable content
-                            of a page when
-                            looking at its layout. The point of using Lorem
-                        </p>
-                        <div>
-                            <a href="">
-                                Read More
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
