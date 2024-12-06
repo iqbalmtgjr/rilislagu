@@ -7,6 +7,7 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\FacebookController;
+use App\Http\Controllers\SubmitlaguController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,7 +61,12 @@ Route::group(['middleware' => 'isLogin'], function () {
     Route::get('/kelola-berita/status/{id}', [BeritaController::class, 'status'])->name('berita.status');
     Route::get('/kelola-berita/destroy/{id}', [BeritaController::class, 'destroy'])->name('berita.destroy');
 
-    // submit lagu
+    // submit sisi user
+    Route::get('/submit', [SubmitlaguController::class, 'index'])->name('submit');
+    Route::post('/submit', [SubmitlaguController::class, 'store'])->name('submit.store');
+    Route::get('/submit/show', [SubmitlaguController::class, 'show'])->name('submit.show');
+    Route::get('/submit/destroy', [SubmitlaguController::class, 'destroy'])->name('submit.destroy');
+
 
     // logout
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');

@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('submit_lagu', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('email');
             $table->string('judul_rilisan');
             $table->string('tipe_rilisan');
@@ -39,7 +40,7 @@ return new class extends Migration
             $table->text('additional_credits')->nullable();
             $table->boolean('konten_dewasa');
             $table->string('tambahan_lirik_file')->nullable();
-            $table->integer('detik_mulai');
+            $table->string('detik_mulai');
             $table->string('saya_adalah');
             $table->string('url_sosial_media_artis');
             $table->string('url_web_artis');
@@ -48,6 +49,7 @@ return new class extends Migration
             $table->string('jenis_layanan');
             $table->string('upload_ktp');
             $table->string('jasa_tambahan');
+            $table->integer('status');
             $table->timestamps();
         });
     }

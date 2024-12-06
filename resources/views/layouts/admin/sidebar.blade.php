@@ -66,8 +66,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url('submitlagu') }}"
-                        class="nav-link {{ request()->is('submitlagu') ? 'active' : '' }}">
+                    <a href="{{ url('submit') }}" class="nav-link {{ request()->is('submit') ? 'active' : '' }}">
                         <i class="nav-icon far fa-plus-square"></i>
                         <p>
                             Submit Lagu

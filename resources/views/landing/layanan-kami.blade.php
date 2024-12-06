@@ -6,7 +6,7 @@
             <div class="col-md-8">
                 <div class="detail-box">
                     <h6>
-                        Tentang
+                        Layanan
                     </h6>
                     <div class="custom_heading-container">
                         <h2>
