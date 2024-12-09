@@ -13,6 +13,13 @@ class LandingController extends Controller
         return view('landing.index', compact('berita'));
     }
 
+
+    public function index2()
+    {
+        $berita = Berita::where('is_published', 1)->orderByDesc('created_at')->limit(3)->get();
+        return view('landing2.index', compact('berita'));
+    }
+
     public function layananKami()
     {
         return view('landing.layanan-kami');

@@ -1,7 +1,7 @@
 <!-- Modal -->
 <div class="modal fade bd-example-modal-lg" id="modal-tambah" tabindex="-1" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Submit Lagu</h5>
@@ -14,6 +14,16 @@
                     @csrf
                     <div class="row">
                         <div class="col-6">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control @error('email') is-invalid @enderror"
+                                    name="email" placeholder="Email" value="{{ old('email') }}">
+                                @error('email')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
                             <div class="form-group">
                                 <label for="judul_rilisan">Judul Rilisan</label>
                                 <input type="text" class="form-control @error('judul_rilisan') is-invalid @enderror"
@@ -48,9 +58,12 @@
                                 <select class="form-control @error('jenis_karya') is-invalid @enderror"
                                     name="jenis_karya">
                                     <option value="">Pilih Jenis Karya</option>
-                                    <option value="Musik" {{ old('jenis_karya') == 'Musik' ? 'selected' : '' }}>Musik
+                                    <option value="Original" {{ old('jenis_karya') == 'Original' ? 'selected' : '' }}>
+                                        Original
                                     </option>
-                                    <option value="Lirik" {{ old('jenis_karya') == 'Lirik' ? 'selected' : '' }}>Lirik
+                                    <option value="Cover" {{ old('jenis_karya') == 'Cover' ? 'selected' : '' }}>Cover
+                                    </option>
+                                    <option value="Remix" {{ old('jenis_karya') == 'Remix' ? 'selected' : '' }}>Remix
                                     </option>
                                 </select>
                                 @error('jenis_karya')
@@ -72,10 +85,10 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="url_spotify_utama">URL Spotify Utama</label>
+                                <label for="url_spotify_utama">URL Spotify Artis Utama</label>
                                 <input type="text"
                                     class="form-control @error('url_spotify_utama') is-invalid @enderror"
-                                    name="url_spotify_utama" placeholder="URL Spotify Utama"
+                                    name="url_spotify_utama" placeholder="URL Spotify Artis Utama"
                                     value="{{ old('url_spotify_utama') }}">
                                 @error('url_spotify_utama')
                                     <div class="invalid-feedback">
@@ -123,7 +136,8 @@
                                 <label for="url_apple_music_artis_featuring">URL Apple Music Artis Featuring</label>
                                 <input type="text"
                                     class="form-control @error('url_apple_music_artis_featuring') is-invalid @enderror"
-                                    name="url_apple_music_artis_featuring" placeholder="URL Apple Music Artis Featuring"
+                                    name="url_apple_music_artis_featuring"
+                                    placeholder="URL Apple Music Artis Featuring"
                                     value="{{ old('url_apple_music_artis_featuring') }}">
                                 @error('url_apple_music_artis_featuring')
                                     <div class="invalid-feedback">
@@ -131,27 +145,27 @@
                                     </div>
                                 @enderror
                             </div>
-                            <div class="form-group">
-                                <label for="artwork">Artwork</label>
-                                <input type="file" class="form-control @error('artwork') is-invalid @enderror"
-                                    name="artwork" placeholder="">
-                                @error('artwork')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label for="tanggal_rilis">Tanggal Rilis</label>
-                                <input type="date"
-                                    class="form-control @error('tanggal_rilis') is-invalid @enderror"
-                                    name="tanggal_rilis" placeholder="Tanggal Rilis"
-                                    value="{{ old('tanggal_rilis') }}">
-                                @error('tanggal_rilis')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
+
+                            <label for="tanggal_rilis">Tanggal Rilis</label>
+                            <div class="form-group d-flex align-items-center">
+                                <div class="col-11 pr-0">
+                                    <input type="date"
+                                        class="form-control @error('tanggal_rilis') is-invalid @enderror"
+                                        name="tanggal_rilis" placeholder="Tanggal Rilis"
+                                        value="{{ old('tanggal_rilis') }}">
+                                    @error('tanggal_rilis')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="col-1 pl-0">
+                                    <button type="button" class="btn btn-info btn-md" data-toggle="popover"
+                                        data-placement="top"
+                                        data-content="<p>Jika Anda mengupload rilis yang sebelumnya telah dirilis secara digital atau fisik, Anda dapat menentukan tanggal rilis awal di sini. Ini adalah tanggal yang akan ditampilkan di sebagian besar toko/platform. Namun, rilis tersebut akan ditayangkan di toko/platform pada tanggal yang ditentukan sebagai Tanggal Rilis. Jika ini adalah rilis baru, biarkan kosong.</p>">
+                                        <i class="fas fa-info-circle"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="genre_musik">Genre Musik</label>
@@ -225,18 +239,6 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="file_lagu">File Lagu</label>
-                                <input type="file" class="form-control @error('file_lagu') is-invalid @enderror"
-                                    name="file_lagu" placeholder="File Lagu" accept=".wav">
-                                @error('file_lagu')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group">
                                 <label for="nama_pencipta">Nama Pencipta</label>
                                 <input type="text"
                                     class="form-control @error('nama_pencipta') is-invalid @enderror"
@@ -248,6 +250,8 @@
                                     </div>
                                 @enderror
                             </div>
+                        </div>
+                        <div class="col-6">
                             <div class="form-group">
                                 <label for="nama_komposer">Nama Komposer</label>
                                 <input type="text"
@@ -303,6 +307,43 @@
                                     </option>
                                 </select>
                                 @error('konten_dewasa')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="file_lagu">File Lagu</label>
+                                <input type="file" class="form-control @error('file_lagu') is-invalid @enderror"
+                                    name="file_lagu" placeholder="File Lagu" accept=".wav">
+                                @error('file_lagu')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <label for="artwork">Artwork</label>
+                            <div class="form-group input-group">
+                                <input type="file" class="form-control @error('artwork') is-invalid @enderror"
+                                    name="artwork" placeholder="">
+                                <div class="input-group-append">
+                                    <button type="button" class="btn btn-info" data-toggle="popover"
+                                        title="Informasi"
+                                        data-content="<ul>
+                                                      <li>Format file untuk Artwork harus dalam format JPG</li>
+                                                      <li>Artwork berdimensi square (Kotak) berukuran minimal 3000×3000 pixels & maksimal 5000x5000 pixels</li>
+                                                      <li>Ukuran file harus dibawah 36 mb</li>
+                                                      <li>Desain berkualitas professional & mewakili musik (tidak blurry/ buram/ pecah)</li>
+                                                      <li>Tidak mengandung text/ icon yang tidak ada hubungannya dengan rilisan. Misalnya: social media, web, porn images, info harga, kontak (email, no. telp, dll).</li>
+                                                      <li>Tulisan di cover HARUS SAMA dengan data yang diinput pada metadata, tidak boleh berbeda, *misalnya penulisan nama artis atau label atau judul antara tulisan di cover dan di data perilisan harus sama.</li>
+                                                      <li>Dilarang menggunakan STOCK Photo dari Google, web editor, AI Generated, Anime, tokoh terkenal dan sebagainya yang berhubungan dengan pelanggaran hak cipta.</li>
+                                                      <li>Bisa mengandung text Nama Artis, Judul Lagu/ Album, Composer, Label, Produksi</li>
+                                                      <li>Semua data text harus sesuai dengan metadata yang dimasukkan baik itu ejaan dan cara penulisannya</li>
+                                                      </ul>">
+                                        <i class="fas fa-info-circle"></i>
+                                    </button>
+                                </div>
+                                @error('artwork')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>

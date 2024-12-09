@@ -7,12 +7,9 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1 class="m-0">Submit Lagu</h1>
+                    {{-- <a href="#" data-toggle="popover" title="Popover Header" data-placement="top"
+                        data-content="Some content inside the popover">Toggle popover</a> --}}
                 </div>
-                {{-- <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Submit Lagu</a></li>
-                    </ol>
-                </div> --}}
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
     </div>
@@ -100,6 +97,16 @@
     <link rel="stylesheet" href="{{ asset('') }}admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 @endpush
 @push('footer')
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle="popover"]').popover({
+                html: true,
+                content: function() {
+                    return $(this).attr('data-content');
+                }
+            });
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         $('.hapus').click(function(e) {
