@@ -24,7 +24,9 @@ use App\Http\Controllers\SubmitlaguController;
 // Route::get('/', [LandingController::class, 'index']);
 Route::get('/', [LandingController::class, 'index2']);
 Route::get('/layanan-kami', [LandingController::class, 'layananKami']);
+Route::get('/rilis-terbaru', [LandingController::class, 'rilisTerbaru']);
 Route::get('/paket-harga', [LandingController::class, 'paketHarga']);
+Route::get('/kontak', [LandingController::class, 'kontak']);
 Route::get('/artikel', [BeritaController::class, 'artikel']);
 Route::get('/artikel/{slug}', [BeritaController::class, 'beritaSatuan'])->name('berita.show');
 

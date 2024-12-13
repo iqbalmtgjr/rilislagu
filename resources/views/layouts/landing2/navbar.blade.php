@@ -33,7 +33,7 @@
                                     data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                                 <!--RD Navbar Brand-->
                                 <div class="rd-navbar-brand">
-                                    <!--Brand--><a class="brand" href="index.html"><img
+                                    <!--Brand--><a class="brand" href="{{ url('/') }}"><img
                                             src="landing2/images/logo-default-296x52.png" alt="" width="148"
                                             height="26" /></a>
                                 </div>
@@ -41,18 +41,22 @@
                             <div class="rd-navbar-main-element">
                                 <div class="rd-navbar-nav-wrap">
                                     <ul class="rd-navbar-nav">
-                                        <li class="rd-nav-item active"><a class="rd-nav-link"
-                                                href="index.html">Beranda</a>
+                                        <li class="rd-nav-item {{ request()->is('/') ? 'active' : '' }}"><a
+                                                class="rd-nav-link" href="{{ url('/') }}">Beranda</a>
                                         </li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">Layanan
+                                        <li class="rd-nav-item {{ request()->is('layanan-kami') ? 'active' : '' }}"><a
+                                                class="rd-nav-link" href="{{ url('layanan-kami') }}">Layanan
                                                 Kami</a>
                                         </li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link" href="typography.html">Rilis
+                                        <li class="rd-nav-item {{ request()->is('rilis-terbaru') ? 'active' : '' }}"><a
+                                                class="rd-nav-link" href="{{ url('rilis-terbaru') }}">Rilis
                                                 Terbaru</a>
                                         </li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Artikel</a>
+                                        <li class="rd-nav-item {{ request()->is('artikel') ? 'active' : '' }}"><a
+                                                class="rd-nav-link" href="{{ url('artikel') }}">Artikel</a>
                                         </li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Paket
+                                        <li class="rd-nav-item {{ request()->is('paket-harga') ? 'active' : '' }}"><a
+                                                class="rd-nav-link" href="{{ url('paket-harga') }}">Paket
                                                 Harga</a>
                                         </li>
                                     </ul>

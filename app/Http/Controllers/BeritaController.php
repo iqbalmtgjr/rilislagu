@@ -21,8 +21,8 @@ class BeritaController extends Controller
 
     public function artikel()
     {
-        $data = Berita::where('is_published', 1)->orderByDesc('created_at')->get();
-        return view('landing.berita.index', compact('data'));
+        $berita = Berita::where('is_published', 1)->orderByDesc('created_at')->get();
+        return view('landing2.artikel', compact('berita'));
     }
 
     public function beritaSatuan($slug)

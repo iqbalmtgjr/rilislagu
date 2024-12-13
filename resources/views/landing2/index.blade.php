@@ -61,15 +61,14 @@
     data-parallax-img="landing2/images/bg-home1-01-1920x1000.png">
     <div class="parallax-content">
         <div class="container">
-            <h6 class="text-gray-600">Trident Festival in Duchonka, slovakia - June 26, 2019</h6>
-            <h2>featured event</h2>
+            {{-- <h6 class="text-gray-600">Trident Festival in Duchonka, slovakia - June 26, 2019</h6> --}}
+            <h2>Playlist Rilis Lagu</h2>
             <div class="row justify-content-center">
                 <div class="col-lg-11">
-                    <div class="post-event">
-                        <div class="countdown" data-type="until" data-time="17 Aug 2019 00:00"></div><img
-                            src="landing2/images/events-02-571x313.jpg" alt="" width="571"
-                            height="156" /><a class="button button-primary button-lg" href="#">buy
-                            tickets</a>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe style="border-radius: 10px; border: 1px solid #2E865F;"
+                            src="https://open.spotify.com/embed/playlist/6C4bAVnlrPRqOjFyhbSkxM" width="100%"
+                            height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </div>
                 </div>
             </div>
@@ -77,7 +76,7 @@
     </div>
 </section>
 
-<section class="section section-lg bg-default text-center">
+{{-- <section class="section section-lg bg-default text-center">
     <div class="container">
         <h6 class="text-gray-600">latest videos from me and my colleagues</h6>
         <h2>recent videos</h2>
@@ -170,47 +169,70 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 
-<section class="section" data-lightgallery="group">
-    <div class="row no-gutters">
-        <div class="col-lg-3 col-sm-6">
-            <div class="thumbnail-classic"><a class="thumbnail-classic-figure" data-lightgallery="item"
-                    href="images/image-original-01-1200x800.jpg"><img src="landing2/images/home1-05-480x350.jpg"
-                        alt="" width="480" height="175" /></a>
-                <div class="thumbnail-classic-caption">
-                    <h5 class="thumbnail-classic-title">Dream Village</h5>
-                    <time class="thumbnail-classic-time" datetime="2019-09-19">Sep 19, 2019</time>
+<section class="section swiper-container swiper-slider" data-loop="true" data-autoplay="5000"
+    data-simulate-touch="false" data-swiper-slide-effect="fade">
+    <div class="swiper-wrapper text-center">
+        <div class="swiper-slide">
+            <div class="row no-gutters">
+                <div class="col-lg-2 col-sm-4">
+                    <div class="thumbnail-classic"><a href="#"><img
+                                src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+                                alt="" width="200" height="50" /></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-4">
+                    <div class="thumbnail-classic"><a href="#"><img
+                                src="https://www.gstatic.com/images/branding/product/1x/google_drive_2020q4_512dp.png"
+                                alt="" width="200" height="50" /></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-4">
+                    <div class="thumbnail-classic"><a href="#"><img
+                                src="https://www.gstatic.com/images/branding/product/1x/google_photos_2020q4_512dp.png"
+                                alt="" width="200" height="50" /></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-4">
+                    <div class="thumbnail-classic"><a href="#"><img
+                                src="https://www.gstatic.com/images/branding/product/1x/google_maps_2020q4_512dp.png"
+                                alt="" width="200" height="50" /></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-4">
+                    <div class="thumbnail-classic"><a href="#"><img
+                                src="https://www.gstatic.com/images/branding/product/1x/google_play_2020q4_512dp.png"
+                                alt="" width="200" height="50" /></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-4">
+                    <div class="thumbnail-classic"><a href="#"><img
+                                src="https://www.gstatic.com/images/branding/product/1x/google_plus_2020q4_512dp.png"
+                                alt="" width="200" height="50" /></a>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-sm-6">
-            <div class="thumbnail-classic"><a class="thumbnail-classic-figure" data-lightgallery="item"
-                    href="images/image-original-02-1200x800.jpg"><img src="landing2/images/home1-06-480x350.jpg"
-                        alt="" width="480" height="175" /></a>
-                <div class="thumbnail-classic-caption">
-                    <h5 class="thumbnail-classic-title">ULTRA MUSIC FESTIVAL</h5>
-                    <time class="thumbnail-classic-time" datetime="2019-09-19">Sep 19, 2019</time>
+        <div class="swiper-slide">
+            <div class="row no-gutters">
+                <div class="col-lg-2 col-sm-4">
+                    <div class="thumbnail-classic"><a href="#"><img
+                                src="https://www.gstatic.com/images/branding/product/1x/google_search_2020q4_512dp.png"
+                                alt="" width="200" height="50" /></a>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-sm-6">
-            <div class="thumbnail-classic"><a class="thumbnail-classic-figure" data-lightgallery="item"
-                    href="images/image-original-03-1200x800.jpg"><img src="landing2/images/home1-07-480x350.jpg"
-                        alt="" width="480" height="175" /></a>
-                <div class="thumbnail-classic-caption">
-                    <h5 class="thumbnail-classic-title">electric Zoo</h5>
-                    <time class="thumbnail-classic-time" datetime="2019-09-19">Sep 19, 2019</time>
+                <div class="col-lg-2 col-sm-4">
+                    <div class="thumbnail-classic"><a href="#"><img
+                                src="https://www.gstatic.com/images/branding/product/1x/google_translate_2020q4_512dp.png"
+                                alt="" width="200" height="50" /></a>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-sm-6">
-            <div class="thumbnail-classic"><a class="thumbnail-classic-figure" data-lightgallery="item"
-                    href="images/image-original-04-1200x800.jpg"><img src="landing2/images/home1-08-480x350.jpg"
-                        alt="" width="480" height="175" /></a>
-                <div class="thumbnail-classic-caption">
-                    <h5 class="thumbnail-classic-title">life in color festival</h5>
-                    <time class="thumbnail-classic-time" datetime="2019-09-19">Sep 19, 2019</time>
+                <div class="col-lg-2 col-sm-4">
+                    <div class="thumbnail-classic"><a href="#"><img
+                                src="https://www.gstatic.com/images/branding/product/1x/google_youtube_2020q4_512dp.png"
+                                alt="" width="200" height="50" /></a>
+                    </div>
                 </div>
             </div>
         </div>
