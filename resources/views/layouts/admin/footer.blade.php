@@ -1,3 +1,15 @@
+<div class="row">
+    <div class="col-md-6">
+        <!-- Content for column 6 goes here -->
+    </div>
+    <div class="col-md-3">
+        <!-- Content for column 3 goes here -->
+    </div>
+    <div class="col-md-3">
+        <!-- Content for column 3 goes here -->
+    </div>
+</div>
+
 <footer class="main-footer">
     <strong>Copyright &copy; 2024 <a href="#">PT. Teroka Musika Media</a>.</strong>
     All rights reserved.

@@ -31,4 +31,5 @@
             display: block;
         }
     </style>
+    @stack('header')
 </head>

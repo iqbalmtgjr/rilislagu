@@ -13,7 +13,7 @@
                                 Rilislagu.id</h5>
                             <h1 data-caption-animate="fadeInUp" data-caption-delay="200">Submit Sekarang</h1>
                             <div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="300"><a
-                                    class="button button-modern button-custom-size-1" href="#">Submit</a></div>
+                                    class="button button-modern button-custom-size-1" href="/login">Submit</a></div>
                         </div>
                     </div>
                 </div>
@@ -28,7 +28,8 @@
                                 di sini</h5>
                             <h1 data-caption-animate="fadeInUp" data-caption-delay="200">Rilisan Kami</h1>
                             <div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="300"><a
-                                    class="button button-modern button-custom-size-1" href="#">Cek Sekarang</a>
+                                    class="button button-modern button-custom-size-1" href="/rilisan-terbaru">Cek
+                                    Sekarang</a>
                             </div>
                         </div>
                     </div>
@@ -45,7 +46,7 @@
                             <h1 data-caption-animate="fadeInUp" data-caption-delay="200">Karya Mu <br> Aset Mu
                             </h1>
                             <div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="300"><a
-                                    class="button button-modern button-custom-size-1" href="#">Jadikan hak
+                                    class="button button-modern button-custom-size-1" href="/login">Jadikan hak
                                     cipta</a></div>
                         </div>
                     </div>
@@ -55,6 +56,65 @@
     </div>
     <!--Swiper Pagination-->
     <div class="swiper-pagination"></div>
+</section>
+
+{{-- Kenapa RIlis lagu --}}
+<section class="parallax-container parallax-overlay-01" data-parallax-img="landing2/images/kenapa-rilis-lagu.png">
+    <div class="parallax-content">
+        <div class="section-sm prefooter-custom">
+            <div class="container">
+                <div class="row">
+                    <h2>Kenapa harus Rilis Lagu?</h2>
+                </div>
+                <div class="row row-30">
+                    <div class="cell-xs-10 col-md-6 col-lg-3">
+                        <article class="box-minimal">
+                            <div class="box-minimal-icon fas fa-money"></div>
+                            <div class="box-minimal-text">
+                                <h5>Harga Terjangkau</h5>
+                                <p>Kami menawarkan layanan berkualitas tinggi yang menjamin kepuasan dan keunggulan
+                                    dalam setiap proyek yang kami kerjakan dengan harga yang terjangkau.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="cell-xs-10 col-md-6 col-lg-3">
+                        <article class="box-minimal">
+                            <div class="box-minimal-icon fas fa-bar-chart"></div>
+                            <div class="box-minimal-text">
+                                <h5 class="box-minimal-title">Royalty Untuk Mu Lebih Besar</h5>
+                                <p>Kami memberikan royalti yang lebih besar untuk klien yang mempercayai kami dalam
+                                    mensukseskan proyek-proyeknya.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="cell-xs-10 col-md-6 col-lg-3">
+                        <article class="box-minimal">
+                            <div class="box-minimal-icon fas fa-bolt"></div>
+                            <div class="box-minimal-text">
+                                <h5 class="box-minimal-title">Proses Cepat</h5>
+                                <p>Kami memberikan kemudahan dan kecepatan proses yang dapat membantu klien untuk
+                                    segera menyelesaikan proyeknya.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="cell-xs-10 col-md-6 col-lg-3">
+                        <article class="box-minimal">
+                            <div class="box-minimal-icon fl-bigmug-line-headphones32"></div>
+                            <div class="box-minimal-text">
+                                <h5 class="box-minimal-title">150+ Platform Music</h5>
+                                <p>Kami menawarkan layanan yang dapat membantu klien untuk mengunggah musiknya ke
+                                    100+ platform music yang terkemuka.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section class="parallax-container section-lg text-center"
@@ -76,169 +136,7 @@
     </div>
 </section>
 
-{{-- <section class="section section-lg bg-default text-center">
-    <div class="container">
-        <h6 class="text-gray-600">latest videos from me and my colleagues</h6>
-        <h2>recent videos</h2>
-        <!--Bootstrap tabs-->
-        <div class="tabs-custom tabs-vertical tabs-video" id="tabs-2">
-            <!--Tab panes-->
-            <div class="tab-content">
-                <div class="tab-pane fade show active" id="tabs-2-1">
-                    <div class="entry-video embed-responsive embed-responsive-16by9">
-                        <iframe width="886" height="668" src="//www.youtube.com/embed/4gRjnaitguQ"
-                            allowfullscreen=""></iframe>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="tabs-2-2">
-                    <div class="entry-video embed-responsive embed-responsive-16by9">
-                        <iframe width="886" height="668" src="//www.youtube.com/embed/mfMR-URQl80"
-                            allowfullscreen=""></iframe>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="tabs-2-3">
-                    <div class="entry-video embed-responsive embed-responsive-16by9">
-                        <iframe width="886" height="668" src="//www.youtube.com/embed/xweHsBLcqp4"
-                            allowfullscreen=""></iframe>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="tabs-2-4">
-                    <div class="entry-video embed-responsive embed-responsive-16by9">
-                        <iframe width="886" height="668" src="//www.youtube.com/embed/V3pPMUmIxAc"
-                            allowfullscreen=""></iframe>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="tabs-2-5">
-                    <div class="entry-video embed-responsive embed-responsive-16by9">
-                        <iframe width="886" height="668" src="//www.youtube.com/embed/N1DEOCUujUg"
-                            allowfullscreen=""></iframe>
-                    </div>
-                </div>
-            </div>
-            <div class="scroll-wrap">
-                <!--Nav tabs-->
-                <ul class="nav nav-tabs">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#tabs-2-1"
-                            data-toggle="tab">
-                            <div class="nav-video">
-                                <figure class="nav-video-figure"><img src="landing2/images/video-01-140x81.jpg"
-                                        alt="" width="140" height="40" />
-                                </figure>
-                                <h6 class="nav-video-title">Armin van Buuren Live at Tomorrowland 2015</h6>
-                            </div>
-                        </a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-2-2"
-                            data-toggle="tab">
-                            <div class="nav-video">
-                                <figure class="nav-video-figure"><img src="landing2/images/video-02-140x81.jpg"
-                                        alt="" width="140" height="40" />
-                                </figure>
-                                <h6 class="nav-video-title">Juicy M - Live at MEO Sudoeste Festival</h6>
-                            </div>
-                        </a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-2-3"
-                            data-toggle="tab">
-                            <div class="nav-video">
-                                <figure class="nav-video-figure"><img src="landing2/images/video-03-140x81.jpg"
-                                        alt="" width="140" height="40" />
-                                </figure>
-                                <h6 class="nav-video-title">Armin van Buuren feat. Angel Taylor - Make It Right
-                                </h6>
-                            </div>
-                        </a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-2-4"
-                            data-toggle="tab">
-                            <div class="nav-video">
-                                <figure class="nav-video-figure"><img src="landing2/images/video-04-140x81.jpg"
-                                        alt="" width="140" height="40" />
-                                </figure>
-                                <h6 class="nav-video-title">Armin Only crew taking over Sydney! Armin Only VLOG
-                                </h6>
-                            </div>
-                        </a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-2-5"
-                            data-toggle="tab">
-                            <div class="nav-video">
-                                <figure class="nav-video-figure"><img src="landing2/images/video-05-140x81.jpg"
-                                        alt="" width="140" height="40" />
-                                </figure>
-                                <h6 class="nav-video-title">Armin Only crew taking over San Francisco!</h6>
-                            </div>
-                        </a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section> --}}
-
-<section class="section swiper-container swiper-slider" data-loop="true" data-autoplay="5000"
-    data-simulate-touch="false" data-swiper-slide-effect="fade">
-    <div class="swiper-wrapper text-center">
-        <div class="swiper-slide">
-            <div class="row no-gutters">
-                <div class="col-lg-2 col-sm-4">
-                    <div class="thumbnail-classic"><a href="#"><img
-                                src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
-                                alt="" width="200" height="50" /></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-sm-4">
-                    <div class="thumbnail-classic"><a href="#"><img
-                                src="https://www.gstatic.com/images/branding/product/1x/google_drive_2020q4_512dp.png"
-                                alt="" width="200" height="50" /></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-sm-4">
-                    <div class="thumbnail-classic"><a href="#"><img
-                                src="https://www.gstatic.com/images/branding/product/1x/google_photos_2020q4_512dp.png"
-                                alt="" width="200" height="50" /></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-sm-4">
-                    <div class="thumbnail-classic"><a href="#"><img
-                                src="https://www.gstatic.com/images/branding/product/1x/google_maps_2020q4_512dp.png"
-                                alt="" width="200" height="50" /></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-sm-4">
-                    <div class="thumbnail-classic"><a href="#"><img
-                                src="https://www.gstatic.com/images/branding/product/1x/google_play_2020q4_512dp.png"
-                                alt="" width="200" height="50" /></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-sm-4">
-                    <div class="thumbnail-classic"><a href="#"><img
-                                src="https://www.gstatic.com/images/branding/product/1x/google_plus_2020q4_512dp.png"
-                                alt="" width="200" height="50" /></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="swiper-slide">
-            <div class="row no-gutters">
-                <div class="col-lg-2 col-sm-4">
-                    <div class="thumbnail-classic"><a href="#"><img
-                                src="https://www.gstatic.com/images/branding/product/1x/google_search_2020q4_512dp.png"
-                                alt="" width="200" height="50" /></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-sm-4">
-                    <div class="thumbnail-classic"><a href="#"><img
-                                src="https://www.gstatic.com/images/branding/product/1x/google_translate_2020q4_512dp.png"
-                                alt="" width="200" height="50" /></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-sm-4">
-                    <div class="thumbnail-classic"><a href="#"><img
-                                src="https://www.gstatic.com/images/branding/product/1x/google_youtube_2020q4_512dp.png"
-                                alt="" width="200" height="50" /></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
+{{-- Artikel --}}
 <section class="section section-xl bg-default text-center">
     <div class="container">
         {{-- <h6 class="text-gray-600">from my blog</h6> --}}
@@ -288,140 +186,76 @@
         </div>
     </div>
 </section>
-<section class="parallax-container parallax-overlay-01" data-parallax-img="landing2/images/bg-footer-1920x1285.jpg">
+
+{{-- platform music --}}
+<section class="section parallax-container py-5" data-parallax-img="landing2/images/kenapa-rilis-lagu.png">
     <div class="parallax-content">
-        <div class="section-sm prefooter-custom">
-            <div class="container">
-                <div class="row row-30">
-                    <div class="col-lg-6">
-                        <div class="google-map-container google-map-container-custom-1" data-center="new york, USA"
-                            data-zoom="5"
-                            data-styles="[{&quot;featureType&quot;:&quot;administrative&quot;,&quot;elementType&quot;:&quot;labels.text.fill&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#444444&quot;}]},{&quot;featureType&quot;:&quot;landscape&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#f2f2f2&quot;}]},{&quot;featureType&quot;:&quot;poi&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;road&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;saturation&quot;:-100},{&quot;lightness&quot;:45}]},{&quot;featureType&quot;:&quot;road.highway&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;simplified&quot;}]},{&quot;featureType&quot;:&quot;road.arterial&quot;,&quot;elementType&quot;:&quot;labels.icon&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;transit&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;water&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#46bcec&quot;},{&quot;visibility&quot;:&quot;on&quot;}]}]">
-                            <div class="google-map"></div>
-                            <ul class="google-map-markers">
-                                <li data-location="Bayfront Park, Miami, USA" data-description="ULTRA MUSIC FESTIVAL"
-                                    data-icon="landing2/images/gmap_marker-1.png"
-                                    data-icon-active="landing2/images/gmap_marker-1.png"></li>
-                                <li data-location="Brooklyn, New York, United States" data-description="CLUB CULTURAL"
-                                    data-icon="landing2/images/gmap_marker-2.png"
-                                    data-icon-active="landing2/images/gmap_marker-2.png"></li>
-                                <li data-location="Hamilton Township Pennsylvania, United States"
-                                    data-description="A summer story" data-icon="landing2/images/gmap_marker-3.png"
-                                    data-icon-active="landing2/images/gmap_marker-3.png"></li>
-                                <li data-location="Montgomery Veterans Park / Arboretum, Harlingen Road, United States"
-                                    data-description="EXPO CENTER TRENciN"
-                                    data-icon="landing2/images/gmap_marker-4.png"
-                                    data-icon-active="landing2/images/gmap_marker-4.png"></li>
-                                <li data-location="West Milford New Jersey, USA"
-                                    data-description="WKND FESTIVAL BALTICS"
-                                    data-icon="landing2/images/gmap_marker-5.png"
-                                    data-icon-active="landing2/images/gmap_marker-5.png"></li>
-                            </ul>
+        <div class="container">
+            <div class="marquee">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="marquee__inner">
+                            <div class="marquee__content">
+                                @foreach (['applemusic', 'amazonmusic', 'youtubemusic', 'boomplay', 'deezer', 'joox', 'melon', 'meta', 'naver', 'soundcloud', 'spotify', 'tencent', 'tidal', 'zing'] as $platform)
+                                    <img src="{{ asset('logo_platform/' . $platform . '.webp') }}" alt=""
+                                        width="200" height="50" />
+                                @endforeach
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <h3>tour dates</h3>
-                        <div class="box-event-wrap scroll-wrap">
-                            <div class="box-event novi-bg">
-                                <div class="box-event-date-wrap">
-                                    <h3 class="box-event-date-day">25</h3>
-                                    <p class="box-event-date-month">feb</p>
+                        <div class="col-md-12 mt-5">
+                            <div class="marquee__inner_right">
+                                <div class="marquee__content">
+                                    @foreach (['applemusic', 'amazonmusic', 'youtubemusic', 'boomplay', 'deezer', 'joox', 'melon', 'meta', 'naver', 'soundcloud', 'spotify', 'tencent', 'tidal', 'zing'] as $platform)
+                                        <img src="{{ asset('logo_platform/' . $platform . '.webp') }}" alt=""
+                                            width="200" height="50" />
+                                    @endforeach
                                 </div>
-                                <div class="box-event-text-wrap">
-                                    <h5 class="box-event-text-title"><a href="#">ULTRA MUSIC
-                                            FESTIVAL</a></h5>
-                                    <ul class="box-event-text-location">
-                                        <li>Miami</li>
-                                        <li>USA</li>
-                                    </ul>
-                                </div>
-                                <div class="box-event-button-wrap"><a class="button button-outline button-sm"
-                                        href="#">buy tickets</a></div>
-                            </div>
-                            <div class="box-event novi-bg">
-                                <div class="box-event-date-wrap">
-                                    <h3 class="box-event-date-day">12</h3>
-                                    <p class="box-event-date-month">mar</p>
-                                </div>
-                                <div class="box-event-text-wrap">
-                                    <h5 class="box-event-text-title"><a href="#">edc orlando</a></h5>
-                                    <ul class="box-event-text-location">
-                                        <li>Tinkler Field</li>
-                                        <li>Orlando</li>
-                                        <li>USA</li>
-                                    </ul>
-                                </div>
-                                <div class="box-event-button-wrap"><a class="button button-outline button-sm"
-                                        href="#">buy tickets</a></div>
-                            </div>
-                            <div class="box-event novi-bg">
-                                <div class="box-event-date-wrap">
-                                    <h3 class="box-event-date-day">24</h3>
-                                    <p class="box-event-date-month">apr</p>
-                                </div>
-                                <div class="box-event-text-wrap">
-                                    <h5 class="box-event-text-title"><a href="#">Electric zoo</a></h5>
-                                    <ul class="box-event-text-location">
-                                        <li>Randall’s Island Park</li>
-                                        <li>New York</li>
-                                        <li>USA</li>
-                                    </ul>
-                                </div>
-                                <div class="box-event-button-wrap"><a class="button button-outline button-sm"
-                                        href="#">buy tickets</a></div>
-                            </div>
-                            <div class="box-event novi-bg">
-                                <div class="box-event-date-wrap">
-                                    <h3 class="box-event-date-day">17</h3>
-                                    <p class="box-event-date-month">jul</p>
-                                </div>
-                                <div class="box-event-text-wrap">
-                                    <h5 class="box-event-text-title"><a href="#">Nocturnal
-                                            Wonderland</a></h5>
-                                    <ul class="box-event-text-location">
-                                        <li>Glen Helen National Park</li>
-                                        <li>USA</li>
-                                    </ul>
-                                </div>
-                                <div class="box-event-button-wrap"><a class="button button-outline button-sm"
-                                        href="#">buy tickets</a></div>
-                            </div>
-                            <div class="box-event novi-bg">
-                                <div class="box-event-date-wrap">
-                                    <h3 class="box-event-date-day">18</h3>
-                                    <p class="box-event-date-month">aug</p>
-                                </div>
-                                <div class="box-event-text-wrap">
-                                    <h5 class="box-event-text-title"><a href="#">Coachella</a></h5>
-                                    <ul class="box-event-text-location">
-                                        <li>Empire Polo Club</li>
-                                        <li>Indio</li>
-                                        <li>USA</li>
-                                    </ul>
-                                </div>
-                                <div class="box-event-button-wrap"><a class="button button-outline button-sm"
-                                        href="#">buy tickets</a></div>
-                            </div>
-                            <div class="box-event novi-bg">
-                                <div class="box-event-date-wrap">
-                                    <h3 class="box-event-date-day">12</h3>
-                                    <p class="box-event-date-month">OCT</p>
-                                </div>
-                                <div class="box-event-text-wrap">
-                                    <h5 class="box-event-text-title"><a href="#">Let It Roll</a></h5>
-                                    <ul class="box-event-text-location">
-                                        <li>Milovice</li>
-                                        <li>Czech Republic</li>
-                                    </ul>
-                                </div>
-                                <div class="box-event-button-wrap"><a class="button button-outline button-sm"
-                                        href="#">buy tickets</a></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </section>
+
+<style>
+    .marquee {
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .marquee__inner,
+    .marquee__inner_right {
+        display: inline-block;
+    }
+
+    .marquee__inner {
+        animation: marquee 20s linear infinite;
+    }
+
+    .marquee__inner_right {
+        animation: marquee-right 20s linear infinite;
+    }
+
+    @keyframes marquee {
+        from {
+            transform: translateX(100%);
+        }
+
+        to {
+            transform: translateX(-100%);
+        }
+    }
+
+    @keyframes marquee-right {
+        from {
+            transform: translateX(-100%);
+        }
+
+        to {
+            transform: translateX(100%);
+        }
+    }
+</style>
+
 @include('layouts.landing2.footer')

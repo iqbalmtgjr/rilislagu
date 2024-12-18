@@ -31,9 +31,6 @@ class BeritaController extends Controller
         return view('landing.berita.detail', compact('data'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         return view('admin.berita.tambah');

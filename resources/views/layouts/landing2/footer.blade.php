@@ -21,6 +21,7 @@
 <script src="{{ asset('/') }}landing2/js/core.min.js"></script>
 <script src="{{ asset('/') }}landing2/js/script.js"></script>
 <!--coded by houdini-->
+@stack('footer')
 </body>
 
 </html>
