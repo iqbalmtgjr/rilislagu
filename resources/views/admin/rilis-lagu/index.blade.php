@@ -6,13 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Kelola Artikel</h1>
-                </div><!-- /.col -->
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Kelola Artikel</a></li>
-                        {{-- <li class="breadcrumb-item active">Dashboard v1</li> --}}
-                    </ol>
+                    <h1 class="m-0">Rilis Lagu</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -31,16 +25,13 @@
                         </div> --}}
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <div class="row">
-                                <a href="/kelola-berita/tambah" class="btn btn-primary btn-sm mb-3 float-right ml-auto">+
-                                    Tambah Artikel</a>
-                            </div>
                             <table id="example2" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
                                         <th width="1%">No</th>
-                                        <th>Judul</th>
-                                        <th>Slug</th>
+                                        <th>Perilis</th>
+                                        <th>Judul Lagu</th>
+                                        <th>Genre</th>
                                         <th>Status</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -49,26 +40,22 @@
                                     @foreach ($data as $item)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $item->judul }}</td>
-                                            <td>{{ $item->slug }}</td>
+                                            <td>{{ $item->user->name }}</td>
+                                            <td>{{ $item->judul_rilisan }}</td>
+                                            <td>{{ $item->genre_musik }}</td>
                                             <td>
-                                                @if ($item->is_published == 1)
-                                                    <a href="javascript:void(0);" data-id="{{ $item->id }}"
-                                                        class="status_publish">
-                                                        <span class="badge badge-success">Publish</span>
-                                                    </a>
+                                                @if ($item->status == 1)
+                                                    <span class="badge badge-success">Rilis</span>
                                                 @else
-                                                    <a href="javascript:void(0);" data-id="{{ $item->id }}"
-                                                        class="status_draft">
-                                                        <span class="badge badge-danger">Draft</span>
-                                                    </a>
+                                                    <span class="badge badge-warning">Belum Rilis</span>
                                                 @endif
                                             </td>
                                             <td>
-                                                <a href="{{ route('berita.edit', $item->id) }}"
-                                                    class="btn btn-success btn-sm">Edit</a>
-                                                <a href="{{ route('berita.show', $item->slug) }}"
-                                                    class="btn btn-info btn-sm" target="_blank">Lihat</a>
+                                                <a href="{{ $item->url_play }}" target="_blank"
+                                                    class="btn btn-info btn-sm"><i class="fas fa-play"></i></a>
+
+                                                <a href="{{ route('rilis.show', $item->id) }}"
+                                                    class="btn btn-success btn-sm">Lihat</a>
                                                 <button data-id="{{ $item->id }}"
                                                     class="btn btn-danger btn-sm hapus">Hapus</button>
                                             </td>
@@ -84,6 +71,7 @@
         </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
+    {{-- @include('admin.pengguna.edit') --}}
 @endsection
 @push('header')
     <!-- DataTables -->
@@ -116,12 +104,12 @@
         $('.hapus').click(function(e) {
             e.preventDefault();
             let id = $(this).data('id');
-            let url = '{{ route('berita.destroy', ':id') }}';
+            let url = '{{ route('pengguna.destroy', ':id') }}';
             url = url.replace(':id', id);
 
             Swal.fire({
                 title: "Apakah anda yakin",
-                text: "Ingin menghapus berita ini?",
+                text: "Ingin menghapus pengguna ini?",
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#3085d6",
@@ -132,58 +120,6 @@
                     Swal.fire({
                         title: "Dihapus!",
                         text: "Data berhasil dihapus.",
-                        icon: "success"
-                    });
-                    window.location.href = url;
-                }
-            });
-        });
-
-        $('.status_publish').click(function(e) {
-            e.preventDefault();
-            let id = $(this).data('id');
-            let url = '{{ route('berita.status', ':id') }}';
-            url = url.replace(':id', id);
-
-            Swal.fire({
-                title: "Apakah anda yakin",
-                text: "Ingin ubah ke draft?",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#3085d6",
-                cancelButtonColor: "#d33",
-                confirmButtonText: "Ya!"
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire({
-                        title: "Diubah!",
-                        text: "Status berhasil diubah.",
-                        icon: "success"
-                    });
-                    window.location.href = url;
-                }
-            });
-        });
-
-        $('.status_draft').click(function(e) {
-            e.preventDefault();
-            let id = $(this).data('id');
-            let url = '{{ route('berita.status', ':id') }}';
-            url = url.replace(':id', id);
-
-            Swal.fire({
-                title: "Apakah anda yakin",
-                text: "Ingin ubah ke publish?",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#3085d6",
-                cancelButtonColor: "#d33",
-                confirmButtonText: "Ya!"
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire({
-                        title: "Diubah!",
-                        text: "Status berhasil diubah.",
                         icon: "success"
                     });
                     window.location.href = url;

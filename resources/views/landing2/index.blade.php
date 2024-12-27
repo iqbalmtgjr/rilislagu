@@ -124,12 +124,14 @@
             {{-- <h6 class="text-gray-600">Trident Festival in Duchonka, slovakia - June 26, 2019</h6> --}}
             <h2>Playlist Rilis Lagu</h2>
             <div class="row justify-content-center">
-                <div class="col-lg-11">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe style="border-radius: 10px; border: 1px solid #2E865F;"
-                            src="https://open.spotify.com/embed/playlist/6C4bAVnlrPRqOjFyhbSkxM" width="100%"
-                            height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                    </div>
+                <div class="col-lg-12">
+                    <!-- <div class="embed-responsive embed-responsive-16by9"> -->
+                    <iframe style="border-radius:12px"
+                        src="https://open.spotify.com/embed/playlist/6C4bAVnlrPRqOjFyhbSkxM?utm_source=generator&theme=0"
+                        width="100%" height="500" frameBorder="0" allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy"></iframe>
+                    <!-- </div> -->
                 </div>
             </div>
         </div>
@@ -145,7 +147,7 @@
             @foreach ($berita as $item)
                 <div class="col-md-6 col-lg-4">
                     <article class="post-classic">
-                        <figure class="post-classic-figure"><a href="#"><img
+                        <figure class="post-classic-figure"><a href="{{ route('berita.show', $item->slug) }}"><img
                                     src="{{ asset('') }}admin/berita/gambar/{{ $item->gambar }}" alt=""
                                     width="346" height="130" /></a></figure>
                         <div class="post-classic-content">
@@ -196,7 +198,7 @@
                     <div class="col-md-12">
                         <div class="marquee__inner">
                             <div class="marquee__content">
-                                @foreach (['applemusic', 'amazonmusic', 'youtubemusic', 'boomplay', 'deezer', 'joox', 'melon', 'meta', 'naver', 'soundcloud', 'spotify', 'tencent', 'tidal', 'zing'] as $platform)
+                                @foreach (['spotify', 'applemusic', 'youtubemusic', 'meta', 'deezer', 'tidal', 'amazonmusic'] as $platform)
                                     <img src="{{ asset('logo_platform/' . $platform . '.webp') }}" alt=""
                                         width="200" height="50" />
                                 @endforeach
@@ -205,7 +207,7 @@
                         <div class="col-md-12 mt-5">
                             <div class="marquee__inner_right">
                                 <div class="marquee__content">
-                                    @foreach (['applemusic', 'amazonmusic', 'youtubemusic', 'boomplay', 'deezer', 'joox', 'melon', 'meta', 'naver', 'soundcloud', 'spotify', 'tencent', 'tidal', 'zing'] as $platform)
+                                    @foreach (['boomplay', 'joox', 'melon', 'naver', 'soundcloud', 'tencent', 'zing'] as $platform)
                                         <img src="{{ asset('logo_platform/' . $platform . '.webp') }}" alt=""
                                             width="200" height="50" />
                                     @endforeach

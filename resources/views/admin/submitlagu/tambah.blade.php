@@ -147,26 +147,25 @@
                             </div>
 
                             <label for="tanggal_rilis">Tanggal Rilis</label>
-                            <div class="form-group d-flex align-items-center">
-                                <div class="col-11 pr-0">
-                                    <input type="date"
-                                        class="form-control @error('tanggal_rilis') is-invalid @enderror"
-                                        name="tanggal_rilis" placeholder="Tanggal Rilis"
-                                        value="{{ old('tanggal_rilis') }}">
-                                    @error('tanggal_rilis')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-                                <div class="col-1 pl-0">
+                            <div class="form-group input-group">
+                                <input type="date"
+                                    class="form-control @error('tanggal_rilis') is-invalid @enderror"
+                                    name="tanggal_rilis" placeholder="Tanggal Rilis"
+                                    value="{{ old('tanggal_rilis') }}">
+                                <div class="input-group-append">
                                     <button type="button" class="btn btn-info btn-md" data-toggle="popover"
                                         data-placement="top"
                                         data-content="<p>Jika Anda mengupload rilis yang sebelumnya telah dirilis secara digital atau fisik, Anda dapat menentukan tanggal rilis awal di sini. Ini adalah tanggal yang akan ditampilkan di sebagian besar toko/platform. Namun, rilis tersebut akan ditayangkan di toko/platform pada tanggal yang ditentukan sebagai Tanggal Rilis. Jika ini adalah rilis baru, biarkan kosong.</p>">
                                         <i class="fas fa-info-circle"></i>
                                     </button>
                                 </div>
+                                @error('tanggal_rilis')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
+
                             <div class="form-group">
                                 <label for="genre_musik">Genre Musik</label>
                                 <input type="text" class="form-control @error('genre_musik') is-invalid @enderror"
@@ -465,7 +464,7 @@
                     </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                 <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>

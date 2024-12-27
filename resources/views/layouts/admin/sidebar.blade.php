@@ -47,32 +47,46 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{ url('kelola-berita') }}"
-                        class="nav-link {{ request()->is('kelola-berita*') ? 'active' : '' }}">
-                        <i class="nav-icon far fa-newspaper"></i>
-                        <p>
-                            Berita
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ url('kelola-submit-lagu') }}"
-                        class="nav-link {{ request()->is('kelola-submit-lagu') ? 'active' : '' }}">
-                        <i class="nav-icon far fa-file-audio"></i>
-                        <p>
-                            Kelola Submit Lagu
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ url('submit') }}" class="nav-link {{ request()->is('submit') ? 'active' : '' }}">
-                        <i class="nav-icon far fa-plus-square"></i>
-                        <p>
-                            Submit Lagu
-                        </p>
-                    </a>
-                </li>
+                @if (auth()->user()->role == 'admin')
+                    <li class="nav-item">
+                        <a href="{{ url('kelola-pengguna') }}"
+                            class="nav-link {{ request()->is('kelola-pengguna') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-user"></i>
+                            <p>
+                                Pengguna
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url('kelola-berita') }}"
+                            class="nav-link {{ request()->is('kelola-berita*') ? 'active' : '' }}">
+                            <i class="nav-icon far fa-newspaper"></i>
+                            <p>
+                                Artikel
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url('rilis-lagu') }}"
+                            class="nav-link {{ request()->is('rilis-lagu*') ? 'active' : '' }}">
+                            <i class="nav-icon far fa-file-audio"></i>
+                            <p>
+                                Rilis Lagu
+                            </p>
+                        </a>
+                    </li>
+                @endif
+                @if (auth()->user()->role == 'user')
+                    <li class="nav-item">
+                        <a href="{{ url('submit') }}" class="nav-link {{ request()->is('submit') ? 'active' : '' }}">
+                            <i class="nav-icon far fa-plus-square"></i>
+                            <p>
+                                Submit Lagu
+                            </p>
+                        </a>
+                    </li>
+                @endif
+
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

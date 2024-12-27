@@ -4,6 +4,7 @@ namespace App\Http;
 
 use App\Http\Middleware\isTamu;
 use App\Http\Middleware\isLogin;
+use App\Http\Middleware\checkRole;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -68,5 +69,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'isLogin' => isLogin::class,
         'isTamu' => isTamu::class,
+        'checkRole' => checkRole::class,
     ];
 }

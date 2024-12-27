@@ -99,13 +99,13 @@
                         <!-- /.col -->
                     </div>
                 </form>
-
+                <hr>
                 <div class="social-auth-links text-center mt-2 mb-3">
-                    <a href="#" class="btn btn-block btn-primary">
+                    {{-- <a href="#" class="btn btn-block btn-primary">
                         <i class="fab fa-facebook mr-2"></i> Daftar dengan Facebook
-                    </a>
-                    <a href="#" class="btn btn-block btn-danger">
-                        <i class="fab fa-google-plus mr-2"></i> Daftar dengan Google
+                    </a> --}}
+                    <a href="{{ route('auth.google') }}" class="btn btn-block btn-outline-primary">
+                        <i class="fab fa-google mr-2"></i> Daftar dengan Google
                     </a>
                 </div>
                 <!-- /.social-auth-links -->

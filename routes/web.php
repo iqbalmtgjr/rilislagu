@@ -7,6 +7,7 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\FacebookController;
+use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\SubmitlaguController;
 
 /*
@@ -55,21 +56,36 @@ Route::group(['middleware' => 'isLogin'], function () {
 
     // profil
 
-    // berita
-    Route::get('/kelola-berita', [BeritaController::class, 'index']);
-    Route::get('/kelola-berita/tambah', [BeritaController::class, 'create']);
-    Route::get('/kelola-berita/edit/{id}', [BeritaController::class, 'edit'])->name('berita.edit');
-    Route::post('/kelola-berita/post', [BeritaController::class, 'store'])->name('berita.post');
-    Route::post('/kelola-berita/update/{id}', [BeritaController::class, 'update'])->name('berita.update');
-    Route::get('/kelola-berita/status/{id}', [BeritaController::class, 'status'])->name('berita.status');
-    Route::get('/kelola-berita/destroy/{id}', [BeritaController::class, 'destroy'])->name('berita.destroy');
+    Route::group(['middleware' => ['checkRole:admin']], function () {
 
-    // submit sisi user
-    Route::get('/submit', [SubmitlaguController::class, 'index'])->name('submit');
-    Route::post('/submit', [SubmitlaguController::class, 'store'])->name('submit.store');
-    Route::get('/submit/show', [SubmitlaguController::class, 'show'])->name('submit.show');
-    Route::get('/submit/destroy', [SubmitlaguController::class, 'destroy'])->name('submit.destroy');
+        //pengguna
+        Route::get('/kelola-pengguna', [PenggunaController::class, 'index']);
+        Route::post('/pengguna/tambah', [PenggunaController::class, 'store'])->name('pengguna.tambah');
+        Route::get('/pengguna/edit/{id}', [PenggunaController::class, 'edit'])->name('pengguna.edit');
+        Route::put('/pengguna/update', [PenggunaController::class, 'update'])->name('pengguna.update');
+        Route::get('/pengguna/destroy/{id}', [PenggunaController::class, 'destroy'])->name('pengguna.destroy');
 
+        // berita
+        Route::get('/kelola-berita', [BeritaController::class, 'index']);
+        Route::get('/kelola-berita/tambah', [BeritaController::class, 'create']);
+        Route::get('/kelola-berita/edit/{id}', [BeritaController::class, 'edit'])->name('berita.edit');
+        Route::post('/kelola-berita/post', [BeritaController::class, 'store'])->name('berita.post');
+        Route::post('/kelola-berita/update/{id}', [BeritaController::class, 'update'])->name('berita.update');
+        Route::get('/kelola-berita/status/{id}', [BeritaController::class, 'status'])->name('berita.status');
+        Route::get('/kelola-berita/destroy/{id}', [BeritaController::class, 'destroy'])->name('berita.destroy');
+
+        // rilis lagu
+        Route::get('/rilis-lagu', [SubmitlaguController::class, 'indexAdmin'])->name('rilis.index');
+        Route::get('/rilis-lagu/show/{id}', [SubmitlaguController::class, 'show'])->name('rilis.show');
+    });
+
+    Route::group(['middleware' => ['checkRole:user']], function () {
+        // submit lagu sisi user
+        Route::get('/submit', [SubmitlaguController::class, 'index'])->name('submit');
+        Route::post('/submit', [SubmitlaguController::class, 'store'])->name('submit.store');
+        Route::get('/submit/show', [SubmitlaguController::class, 'show'])->name('submit.show');
+        Route::get('/submit/destroy', [SubmitlaguController::class, 'destroy'])->name('submit.destroy');
+    });
 
     // logout
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');

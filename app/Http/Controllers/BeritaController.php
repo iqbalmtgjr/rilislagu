@@ -28,7 +28,7 @@ class BeritaController extends Controller
     public function beritaSatuan($slug)
     {
         $data = Berita::where('slug', $slug)->first();
-        return view('landing.berita.detail', compact('data'));
+        return view('landing2.detail-artikel', compact('data'));
     }
 
     public function create()
@@ -171,14 +171,12 @@ class BeritaController extends Controller
                 'judul' => $request->judul,
                 'isi' => $isi,
                 'gambar' => $nama_foto,
-                'is_published' => 1,
                 'slug' => Str::of($request->judul)->slug('-'),
             ]);
         } else {
             Berita::find($id)->update([
                 'judul' => $request->judul,
                 'isi' => $isi,
-                'is_published' => 1,
                 'slug' => Str::of($request->judul)->slug('-'),
             ]);
         }

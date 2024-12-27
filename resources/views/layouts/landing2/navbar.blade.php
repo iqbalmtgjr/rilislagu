@@ -1,7 +1,9 @@
 <body>
-    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img
-                src="landing2/images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820"
-                alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a>
+    <div class="ie-panel">
+        <a href="http://windows.microsoft.com/en-US/internet-explorer/">
+            <img src="{{ asset('/') }}landing2/images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820"
+                alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.">
+        </a>
     </div>
     <div class="preloader">
         <div class="preloader-body">
@@ -34,8 +36,8 @@
                                 <!--RD Navbar Brand-->
                                 <div class="rd-navbar-brand">
                                     <!--Brand--><a class="brand" href="{{ url('/') }}"><img
-                                            src="landing2/images/logo-default-296x52.png" alt="" width="148"
-                                            height="26" /></a>
+                                            src="{{ asset('/') }}landing2/images/logo-default-296x52.png"
+                                            alt="" width="148" height="26" /></a>
                                 </div>
                             </div>
                             <div class="rd-navbar-main-element">
@@ -64,13 +66,17 @@
                             </div>
                             <div class="rd-navbar-collapse">
                                 <ul class="socialite-list">
+                                    <li class="rd-nav-item {{ request()->is('login') ? 'active' : '' }}"><a
+                                            class="rd-nav-link" href="{{ url('login') }}">Login</a>
+                                    </li>
+
                                     {{-- <li><a class="icon novi-icon socialite fa-facebook" href="#"></a></li>
                                     <li><a class="icon novi-icon socialite fa-twitter" href="#"></a></li> --}}
-                                    <li><a class="icon novi-icon socialite fa-whatsapp"
+                                    {{-- <li><a class="icon novi-icon socialite fa-whatsapp"
                                             href="https://api.whatsapp.com/send?phone=6281577411111&text=Hai%20DJ%20Fox%2C%20saya%20ingin%20bertanya%20tentang%20jasa%20desain%20grafi"></a>
                                     </li>
                                     <li><a class="icon novi-icon socialite fa-instagram"
-                                            href="https://www.instagram.com/djfox.id/"></a></li>
+                                            href="https://www.instagram.com/djfox.id/"></a></li> --}}
                                 </ul>
                             </div>
                         </div>

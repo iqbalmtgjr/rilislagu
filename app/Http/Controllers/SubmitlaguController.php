@@ -8,9 +8,14 @@ use Illuminate\Support\Facades\Validator;
 
 class SubmitlaguController extends Controller
 {
+    public function indexAdmin()
+    {
+        $data = Submitlagu::latest()->get();
+        return view('admin.rilis-lagu.index', compact('data'));
+    }
     public function index()
     {
-        $data = Submitlagu::where('user_id', auth()->user()->id)->get();
+        $data = Submitlagu::where('user_id', auth()->user()->id)->latest()->get();
         return view('admin.submitlagu.index', compact('data'));
     }
 
@@ -136,5 +141,11 @@ class SubmitlaguController extends Controller
 
         toastr()->success('Berhasil Submit Lagu!', 'Sukses');
         return redirect()->back();
+    }
+
+    public function show($id)
+    {
+        $data = Submitlagu::findOrFail($id);
+        return view('admin.rilis-lagu.detail', compact('data'));
     }
 }
