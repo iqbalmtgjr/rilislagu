@@ -24,8 +24,10 @@ return new class extends Migration
             $table->string('artis_featuring')->nullable();
             $table->string('url_spotify_artis_featuring')->nullable();
             $table->string('url_apple_music_artis_featuring')->nullable();
+            $table->string('url_youtube')->nullable();
+            $table->string('url_sosial_media')->nullable();
             $table->string('artwork');
-            $table->date('tanggal_rilis');
+            $table->date('tanggal_rilis')->nullable();
             $table->string('genre_musik');
             $table->string('sub_genre');
             $table->boolean('lagu_tanpa_vocal');
@@ -34,6 +36,7 @@ return new class extends Migration
             $table->string('nama_label');
             $table->string('file_lagu');
             $table->string('nama_pencipta');
+            $table->string('nama_produser');
             $table->string('nama_komposer');
             $table->string('nama_pemegang_hak_cipta');
             $table->string('upc')->nullable();
@@ -48,7 +51,7 @@ return new class extends Migration
             $table->string('no_hp');
             $table->string('jenis_layanan');
             $table->string('upload_ktp');
-            $table->string('jasa_tambahan');
+            $table->string('jasa_tambahan')->nullable();
             $table->integer('status');
             $table->timestamps();
         });

@@ -35,6 +35,18 @@
                                 @enderror
                             </div>
                             <div class="form-group">
+                                <label for="nama_artis_utama">Nama Artis Utama</label>
+                                <input type="text"
+                                    class="form-control @error('nama_artis_utama') is-invalid @enderror"
+                                    name="nama_artis_utama" placeholder="Nama Artis Utama"
+                                    value="{{ old('nama_artis_utama') }}">
+                                @error('nama_artis_utama')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
                                 <label for="tipe_rilisan">Tipe Rilisan</label>
                                 <select class="form-control @error('tipe_rilisan') is-invalid @enderror"
                                     name="tipe_rilisan">
@@ -53,7 +65,7 @@
                                     </div>
                                 @enderror
                             </div>
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <label for="jenis_karya">Jenis Karya</label>
                                 <select class="form-control @error('jenis_karya') is-invalid @enderror"
                                     name="jenis_karya">
@@ -71,19 +83,7 @@
                                         {{ $message }}
                                     </div>
                                 @enderror
-                            </div>
-                            <div class="form-group">
-                                <label for="nama_artis_utama">Nama Artis Utama</label>
-                                <input type="text"
-                                    class="form-control @error('nama_artis_utama') is-invalid @enderror"
-                                    name="nama_artis_utama" placeholder="Nama Artis Utama"
-                                    value="{{ old('nama_artis_utama') }}">
-                                @error('nama_artis_utama')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
+                            </div> --}}
                             <div class="form-group">
                                 <label for="url_spotify_utama">URL Spotify Artis Utama</label>
                                 <input type="text"
@@ -136,8 +136,7 @@
                                 <label for="url_apple_music_artis_featuring">URL Apple Music Artis Featuring</label>
                                 <input type="text"
                                     class="form-control @error('url_apple_music_artis_featuring') is-invalid @enderror"
-                                    name="url_apple_music_artis_featuring"
-                                    placeholder="URL Apple Music Artis Featuring"
+                                    name="url_apple_music_artis_featuring" placeholder="URL Apple Music Artis Featuring"
                                     value="{{ old('url_apple_music_artis_featuring') }}">
                                 @error('url_apple_music_artis_featuring')
                                     <div class="invalid-feedback">
@@ -145,8 +144,30 @@
                                     </div>
                                 @enderror
                             </div>
-
-                            <label for="tanggal_rilis">Tanggal Rilis</label>
+                            <div class="form-group">
+                                <label for="url_youtube">URL YouTube</label>
+                                <input type="text" class="form-control @error('url_youtube') is-invalid @enderror"
+                                    name="url_youtube" placeholder="Wajib Link Channel Original"
+                                    value="{{ old('url_youtube') }}">
+                                @error('url_youtube')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="url_sosial_media">URL Sosial Media</label>
+                                <input type="text"
+                                    class="form-control @error('url_sosial_media') is-invalid @enderror"
+                                    name="url_sosial_media" placeholder="Bisa URL Instagram/Facebook"
+                                    value="{{ old('url_sosial_media') }}">
+                                @error('url_sosial_media')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <label for="tanggal_rilis">Tanggal Rilis Awal</label>
                             <div class="form-group input-group">
                                 <input type="date"
                                     class="form-control @error('tanggal_rilis') is-invalid @enderror"
@@ -168,8 +189,73 @@
 
                             <div class="form-group">
                                 <label for="genre_musik">Genre Musik</label>
-                                <input type="text" class="form-control @error('genre_musik') is-invalid @enderror"
-                                    name="genre_musik" placeholder="Genre Musik" value="{{ old('genre_musik') }}">
+                                <select class="form-control @error('genre_musik') is-invalid @enderror"
+                                    name="genre_musik">
+                                    <option value="">Pilih</option>
+                                    <option value="Blues" {{ old('genre_musik') == 'Blues' ? 'selected' : '' }}>Blues
+                                    </option>
+                                    <option value="Musik Anak"
+                                        {{ old('genre_musik') == 'Musik Anak' ? 'selected' : '' }}>Musik Anak</option>
+                                    <option value="Lagu Kristen"
+                                        {{ old('genre_musik') == 'Lagu Kristen' ? 'selected' : '' }}>Lagu Kristen
+                                    </option>
+                                    <option value="Klasik" {{ old('genre_musik') == 'Klasik' ? 'selected' : '' }}>
+                                        Klasik</option>
+                                    <option value="Komedi" {{ old('genre_musik') == 'Komedi' ? 'selected' : '' }}>
+                                        Komedi</option>
+                                    <option value="Country" {{ old('genre_musik') == 'Country' ? 'selected' : '' }}>
+                                        Country</option>
+                                    <option value="Easy Listening"
+                                        {{ old('genre_musik') == 'Easy Listening' ? 'selected' : '' }}>Easy Listening
+                                    </option>
+                                    <option value="Educational"
+                                        {{ old('genre_musik') == 'Educational' ? 'selected' : '' }}>Educational
+                                    </option>
+                                    <option value="Electronik"
+                                        {{ old('genre_musik') == 'Electronik' ? 'selected' : '' }}>Electronik</option>
+                                    <option value="Fitnes & Workout"
+                                        {{ old('genre_musik') == 'Fitnes & Workout' ? 'selected' : '' }}>Fitnes &
+                                        Workout</option>
+                                    <option value="Folk" {{ old('genre_musik') == 'Folk' ? 'selected' : '' }}>Folk
+                                    </option>
+                                    <option value="Hip Hop/Rap"
+                                        {{ old('genre_musik') == 'Hip Hop/Rap' ? 'selected' : '' }}>Hip Hop/Rap
+                                    </option>
+                                    <option value="Holiday Music"
+                                        {{ old('genre_musik') == 'Holiday Music' ? 'selected' : '' }}>Holiday Music
+                                    </option>
+                                    <option value="Inspirasional"
+                                        {{ old('genre_musik') == 'Inspirasional' ? 'selected' : '' }}>Inspirasional
+                                    </option>
+                                    <option value="Jazz" {{ old('genre_musik') == 'Jazz' ? 'selected' : '' }}>Jazz
+                                    </option>
+                                    <option value="Karaoke" {{ old('genre_musik') == 'Karaoke' ? 'selected' : '' }}>
+                                        Karaoke</option>
+                                    <option value="Oldies" {{ old('genre_musik') == 'Oldies' ? 'selected' : '' }}>
+                                        Oldies</option>
+                                    <option value="Pop" {{ old('genre_musik') == 'Pop' ? 'selected' : '' }}>Pop
+                                    </option>
+                                    <option value="R&B/Soul" {{ old('genre_musik') == 'R&B/Soul' ? 'selected' : '' }}>
+                                        R&B/Soul</option>
+                                    <option value="Reggae" {{ old('genre_musik') == 'Reggae' ? 'selected' : '' }}>
+                                        Reggae</option>
+                                    <option value="Rock" {{ old('genre_musik') == 'Rock' ? 'selected' : '' }}>Rock
+                                    </option>
+                                    <option value="Samba" {{ old('genre_musik') == 'Samba' ? 'selected' : '' }}>Samba
+                                    </option>
+                                    <option value="Soundtracks"
+                                        {{ old('genre_musik') == 'Soundtracks' ? 'selected' : '' }}>Soundtracks
+                                    </option>
+                                    <option value="Spoken Word"
+                                        {{ old('genre_musik') == 'Spoken Word' ? 'selected' : '' }}>Spoken Word
+                                    </option>
+                                    <option value="World" {{ old('genre_musik') == 'World' ? 'selected' : '' }}>World
+                                    </option>
+                                    <option value="Arabic" {{ old('genre_musik') == 'Arabic' ? 'selected' : '' }}>
+                                        Arabic
+                                    </option>
+
+                                </select>
                                 @error('genre_musik')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -207,7 +293,7 @@
                                 <label for="bahasa_judul">Bahasa Judul</label>
                                 <input type="text"
                                     class="form-control @error('bahasa_judul') is-invalid @enderror"
-                                    name="bahasa_judul" placeholder="Bahasa Judul"
+                                    name="bahasa_judul" placeholder="Contoh: Indonesia, Inggris, Arab, Daerah"
                                     value="{{ old('bahasa_judul') }}">
                                 @error('bahasa_judul')
                                     <div class="invalid-feedback">
@@ -219,7 +305,7 @@
                                 <label for="bahasa_lirik">Bahasa Lirik</label>
                                 <input type="text"
                                     class="form-control @error('bahasa_lirik') is-invalid @enderror"
-                                    name="bahasa_lirik" placeholder="Bahasa Lirik"
+                                    name="bahasa_lirik" placeholder="Contoh: Indonesia, Inggris, Arab, Daerah"
                                     value="{{ old('bahasa_lirik') }}">
                                 @error('bahasa_lirik')
                                     <div class="invalid-feedback">
@@ -230,7 +316,8 @@
                             <div class="form-group">
                                 <label for="nama_label">Nama Label</label>
                                 <input type="text" class="form-control @error('nama_label') is-invalid @enderror"
-                                    name="nama_label" placeholder="Nama Label" value="{{ old('nama_label') }}">
+                                    name="nama_label" placeholder="Bebas Kustomisasi"
+                                    value="{{ old('nama_label') }}">
                                 @error('nama_label')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -241,9 +328,21 @@
                                 <label for="nama_pencipta">Nama Pencipta</label>
                                 <input type="text"
                                     class="form-control @error('nama_pencipta') is-invalid @enderror"
-                                    name="nama_pencipta" placeholder="Nama Pencipta"
+                                    name="nama_pencipta" placeholder="Isi sesuai identitas KTP"
                                     value="{{ old('nama_pencipta') }}">
                                 @error('nama_pencipta')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="nama_produser">Nama Produser</label>
+                                <input type="text"
+                                    class="form-control @error('nama_produser') is-invalid @enderror"
+                                    name="nama_produser" placeholder="Isi sesuai identitas KTP"
+                                    value="{{ old('nama_produser') }}">
+                                @error('nama_produser')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
@@ -252,10 +351,10 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <label for="nama_komposer">Nama Komposer</label>
+                                <label for="nama_komposer">Nama Komposer/Arranger</label>
                                 <input type="text"
                                     class="form-control @error('nama_komposer') is-invalid @enderror"
-                                    name="nama_komposer" placeholder="Nama Komposer"
+                                    name="nama_komposer" placeholder="Isi sesuai identitas KTP"
                                     value="{{ old('nama_komposer') }}">
                                 @error('nama_komposer')
                                     <div class="invalid-feedback">
@@ -267,7 +366,7 @@
                                 <label for="nama_pemegang_hak_cipta">Nama Pemegang Hak Cipta</label>
                                 <input type="text"
                                     class="form-control @error('nama_pemegang_hak_cipta') is-invalid @enderror"
-                                    name="nama_pemegang_hak_cipta" placeholder="Nama Pemegang Hak Cipta"
+                                    name="nama_pemegang_hak_cipta" placeholder="Boleh diisi nama label"
                                     value="{{ old('nama_pemegang_hak_cipta') }}">
                                 @error('nama_pemegang_hak_cipta')
                                     <div class="invalid-feedback">
@@ -278,7 +377,7 @@
                             <div class="form-group">
                                 <label for="upc">UPC</label>
                                 <input type="text" class="form-control @error('upc') is-invalid @enderror"
-                                    name="upc" placeholder="UPC" value="{{ old('upc') }}">
+                                    name="upc" placeholder="UPC (jika ada)" value="{{ old('upc') }}">
                                 @error('upc')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -288,7 +387,7 @@
                             <div class="form-group">
                                 <label for="additional_credits">Additional Credits</label>
                                 <textarea class="form-control @error('additional_credits') is-invalid @enderror" name="additional_credits"
-                                    placeholder="Additional Credits">{{ old('additional_credits') }}</textarea>
+                                    placeholder="Diisi dengan kontributor lagu contoh: Pengisi backing vocal, pemain gitar, pemain keyboard dan lain-lain">{{ old('additional_credits') }}</textarea>
                                 @error('additional_credits')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -361,11 +460,10 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="detik_mulai">Detik Mulai</label>
+                                <label for="detik_mulai">Detik Mulai Preview</label>
                                 <input type="text" class="form-control @error('detik_mulai') is-invalid @enderror"
                                     name="detik_mulai" value="{{ old('detik_mulai') }}"
                                     placeholder="jam:menit:detik (00:00:00)">
-
                                 @error('detik_mulai')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -374,8 +472,26 @@
                             </div>
                             <div class="form-group">
                                 <label for="saya_adalah">Saya Adalah</label>
-                                <input type="text" class="form-control @error('saya_adalah') is-invalid @enderror"
-                                    name="saya_adalah" placeholder="Saya Adalah" value="{{ old('saya_adalah') }}">
+                                <select class="form-control @error('saya_adalah') is-invalid @enderror"
+                                    name="saya_adalah">
+                                    <option value="">-- Pilih Opsi --</option>
+                                    <option value="Pihak Solo/Artist"
+                                        {{ old('saya_adalah') == 'Pihak Solo/Artist' ? 'selected' : '' }}>Pihak
+                                        Solo/Artist</option>
+                                    <option value="Pihak Band"
+                                        {{ old('saya_adalah') == 'Pihak Band' ? 'selected' : '' }}>Pihak Band</option>
+                                    <option value="Personil Band"
+                                        {{ old('saya_adalah') == 'Personil Band' ? 'selected' : '' }}>Personil Band
+                                    </option>
+                                    <option value="Pihak Management"
+                                        {{ old('saya_adalah') == 'Pihak Management' ? 'selected' : '' }}>Pihak
+                                        Management</option>
+                                    <option value="Pihak Label"
+                                        {{ old('saya_adalah') == 'Pihak Label' ? 'selected' : '' }}>Pihak Label
+                                    </option>
+                                    <option value="Agen" {{ old('saya_adalah') == 'Agen' ? 'selected' : '' }}>Agen
+                                    </option>
+                                </select>
                                 @error('saya_adalah')
                                     <div class="invalid-feedback">
                                         {{ $message }}
