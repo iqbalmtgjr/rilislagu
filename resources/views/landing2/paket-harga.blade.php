@@ -20,7 +20,7 @@
                                     Single
                                 </div>
                                 <div class="card-body" style="color: #1e025b">
-                                    <h5 class="card-title" style="color:#1e025b; weight: bold;">Rp. 10.000</h5>
+                                    <h5 class="card-title" style="color:#1e025b; weight: bold;">Rp. 20.000</h5>
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item">
                                             <span class="fas fa-check-circle" style="color: green;"></span> 1
@@ -55,7 +55,7 @@
                                     EP
                                 </div>
                                 <div class="card-body" style="color: #1e025b">
-                                    <h5 class="card-title" style="color:#1e025b; weight: bold;">Rp. 35.000</h5>
+                                    <h5 class="card-title" style="color:#1e025b; weight: bold;">Rp. 50.000</h5>
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item">
                                             <span class="fas fa-check-circle" style="color: green;"></span> Min 2 Track
@@ -88,7 +88,7 @@
                                     ALBUM
                                 </div>
                                 <div class="card-body" style="color: #1e025b">
-                                    <h5 class="card-title" style="color:#1e025b; weight: bold;">Rp. 100.000</h5>
+                                    <h5 class="card-title" style="color:#1e025b; weight: bold;">Rp. 150.000</h5>
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item">
                                             <span class="fas fa-check-circle" style="color: green;"></span> Min 5 Track
@@ -121,7 +121,7 @@
                                     KOMPILASI
                                 </div>
                                 <div class="card-body" style="color: #1e025b">
-                                    <h5 class="card-title" style="color:#1e025b; weight: bold;">Rp. 150.000</h5>
+                                    <h5 class="card-title" style="color:#1e025b; weight: bold;">Rp. 175.000</h5>
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item">
                                             <span class="fas fa-check-circle" style="color: green;"></span> Min 5
@@ -224,7 +224,7 @@
                                     ALBUM
                                 </div>
                                 <div class="card-body" style="color: #1e025b">
-                                    <h5 class="card-title" style="color:#1e025b; weight: bold;">Rp. 150.000</h5>
+                                    <h5 class="card-title" style="color:#1e025b; weight: bold;">Rp. 200.000</h5>
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item">
                                             <span class="fas fa-check-circle" style="color: green;"></span> Min 5
@@ -254,7 +254,7 @@
                                     KOMPILASI
                                 </div>
                                 <div class="card-body" style="color: #1e025b">
-                                    <h5 class="card-title" style="color:#1e025b; weight: bold;">Rp. 200.000</h5>
+                                    <h5 class="card-title" style="color:#1e025b; weight: bold;">Rp. 225.000</h5>
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item">
                                             <span class="fas fa-check-circle" style="color: green;"></span> Min 5

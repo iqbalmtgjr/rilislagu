@@ -63,17 +63,17 @@
     <div class="parallax-content">
         <div class="section-sm prefooter-custom">
             <div class="container">
-                <div class="row">
-                    <h2>Kenapa harus Rilis Lagu?</h2>
-                </div>
+                {{-- <div class="row"> --}}
+                <h2 class="text-center">Kenapa harus submit di Rilislagu.id?</h2>
+                {{-- </div> --}}
                 <div class="row row-30">
                     <div class="cell-xs-10 col-md-6 col-lg-3">
                         <article class="box-minimal">
                             <div class="box-minimal-icon fas fa-money"></div>
                             <div class="box-minimal-text">
-                                <h5>Harga Terjangkau</h5>
-                                <p>Kami menawarkan layanan berkualitas tinggi yang menjamin kepuasan dan keunggulan
-                                    dalam setiap proyek yang kami kerjakan dengan harga yang terjangkau.
+                                <h5>Harga Lebih Flesibel</h5>
+                                <p>Kami menawarkan harga layanan yang dapat dipilih sesuai dengan kebutuhan rilis lagu
+                                    dan musik mu
                                 </p>
                             </div>
                         </article>
@@ -83,8 +83,8 @@
                             <div class="box-minimal-icon fas fa-bar-chart"></div>
                             <div class="box-minimal-text">
                                 <h5 class="box-minimal-title">Royalty Untuk Mu Lebih Besar</h5>
-                                <p>Kami memberikan royalti yang lebih besar untuk klien yang mempercayai kami dalam
-                                    mensukseskan proyek-proyeknya.
+                                <p>Kami memberikan royalti yang lebih besar untuk artis dan label yang bergabung dan
+                                    merilis karyanya di Rilislagu.id
                                 </p>
                             </div>
                         </article>
@@ -94,8 +94,7 @@
                             <div class="box-minimal-icon fas fa-bolt"></div>
                             <div class="box-minimal-text">
                                 <h5 class="box-minimal-title">Proses Cepat</h5>
-                                <p>Kami memberikan kemudahan dan kecepatan proses yang dapat membantu klien untuk
-                                    segera menyelesaikan proyeknya.
+                                <p>Kami memberikan kemudahan dan kecepatan proses untuk rilis lagu dan musik Anda
                                 </p>
                             </div>
                         </article>
@@ -106,7 +105,7 @@
                             <div class="box-minimal-text">
                                 <h5 class="box-minimal-title">150+ Platform Music</h5>
                                 <p>Kami menawarkan layanan yang dapat membantu klien untuk mengunggah musiknya ke
-                                    100+ platform music yang terkemuka.
+                                    150+ platform music yang terkemuka dunia
                                 </p>
                             </div>
                         </article>
@@ -132,6 +131,58 @@
                         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                         loading="lazy"></iframe>
                     <!-- </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{-- Langkah-langkah --}}
+<section class="section parallax-container parallax-overlay-01 py-5"
+    data-parallax-img="landing2/images/kenapa-rilis-lagu.png">
+    <div class="parallax-content">
+        <div class="section-sm prefooter-custom">
+            <div class="container">
+                <h2 class="text-center">Tahapan untuk Submit Music <br> di Rilislagu.id</h2>
+                <div class="row row-30">
+                    <div class="col-md-6 col-lg-4">
+                        <article class="box-minimal">
+                            <div class="box-minimal-icon fas fa-user"></div>
+                            <div class="box-minimal-text">
+                                <h5>Buat Akun</h5>
+                                <p>Daftarkan akun semudah dengan cara login menggunakan gmail.</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <article class="box-minimal">
+                            <div class="box-minimal-icon fas fa-upload"></div>
+                            <div class="box-minimal-text">
+                                <h5>Unggah Lagu & Isi Informasi</h5>
+                                <p>Inilah kesempatan Anda untuk mengunggah musik Anda dengan cepat dan merilisnya ke
+                                    seluruh dunia. Apple Music, Spotify, iTunes, Amazon, dan 150+ toko digital agar lagu
+                                    Anda terus diputar.</p>
+                            </div>
+                        </article>
+                    </div>
+                    {{-- <div class="col-md-6 col-lg-3">
+                        <article class="box-minimal">
+                            <div class="box-minimal-icon fas fa-edit"></div>
+                            <div class="box-minimal-text">
+                                <h5>Isi Informasi</h5>
+                                <p>Lengkapi informasi yang diperlukan untuk mempublikasikan lagu Anda.</p>
+                            </div>
+                        </article>
+                    </div> --}}
+                    <div class="col-md-6 col-lg-4">
+                        <article class="box-minimal">
+                            <div class="box-minimal-icon fas fa-check"></div>
+                            <div class="box-minimal-text">
+                                <h5>Verifikasi & Rilis</h5>
+                                <p>Tunggu verifikasi dan rilisan lagu Anda akan segera tayang.</p>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </div>
         </div>
@@ -198,29 +249,41 @@
                     <div class="col-md-12">
                         <div class="marquee__inner">
                             <div class="marquee__content">
-                                @foreach (['spotify', 'applemusic', 'youtubemusic', 'meta', 'deezer', 'tidal', 'amazonmusic'] as $platform)
-                                    <img src="{{ asset('logo_platform/' . $platform . '.webp') }}" alt=""
+                                @foreach (['apple', 'spotify', 'amazon', 'tidal', 'facebook', 'tiktok', 'vevo', 'napster', 'youtube', 'resso', 'deezer', 'pandora', 'instagram'] as $platform)
+                                    <img style="margin-right: 20px;"
+                                        src="{{ asset('logo_platform/' . $platform . '.webp') }}" alt=""
                                         width="200" height="50" />
                                 @endforeach
-                            </div>
-                        </div>
-                        <div class="col-md-12 mt-5">
-                            <div class="marquee__inner_right">
-                                <div class="marquee__content">
-                                    @foreach (['boomplay', 'joox', 'melon', 'naver', 'soundcloud', 'tencent', 'zing'] as $platform)
-                                        <img src="{{ asset('logo_platform/' . $platform . '.webp') }}" alt=""
-                                            width="200" height="50" />
-                                    @endforeach
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <style>
+                .marquee {
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+
+                .marquee__inner {
+                    display: inline-block;
+                    animation: marquee 20s linear infinite alternate;
+                }
+
+                @keyframes marquee {
+                    from {
+                        transform: translateX(20%);
+                    }
+
+                    to {
+                        transform: translateX(-150%);
+                    }
+                }
+            </style>
         </div>
 </section>
 
-<style>
+{{-- <style>
     .marquee {
         white-space: nowrap;
         overflow: hidden;
@@ -258,6 +321,6 @@
             transform: translateX(100%);
         }
     }
-</style>
+</style> --}}
 
 @include('layouts.landing2.footer')
