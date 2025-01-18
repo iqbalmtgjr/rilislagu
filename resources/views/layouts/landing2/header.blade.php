@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" href="{{ asset('/') }}favicon.ico" type="image/x-icon">
     <meta name="description"
-        content="Rilis Lagu adalah website yang menawarkan bantuan untuk merilis lagu ke berbagai platform musik digital seperti Spotify, Apple Music, Joox, TikTok dan lain-lain. Kami akan membantu Anda dalam proses distribusi musik Anda agar dapat didengar oleh masyarakat luas." />
+        content="Rilis Lagu adalah distributor musik yang menawarkan jasa untuk rilis lagu ke berbagai platform musik digital seperti Spotify, Apple Music, Meta, TikTok dan lain-lain. Kami akan membantu Anda dalam proses distribusi musik Anda agar dapat didengar di seluruh digital music streaming. Ayo rilis lagu dan musik mu sekarang! Kami akan bantu distribusikan lagu dan musik mu rilis ke berbagai platform musik digital." />
     <link rel="stylesheet" type="text/css"
         href="https://fonts.googleapis.com/css?family=Lato:400,700%7COpen+Sans:400,600,700%7CSource+Code+Pro:300,400,500,600,700,900%7CNothing+You+Could+Do%7CPoppins:400,500">
     <link rel="stylesheet" href="{{ asset('/') }}landing2/css/bootstrap.css">

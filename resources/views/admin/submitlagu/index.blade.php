@@ -21,68 +21,68 @@
             <!-- Small boxes (Stat box) -->
             <div class="row">
                 <div class="col-12">
-                    <div class="card">
-                        {{-- <div class="card-header">
+                    {{-- <div class="card"> --}}
+                    {{-- <div class="card-header">
                             <h3 class="card-title">Submit Lagu</h3>
                         </div> --}}
-                        <!-- /.card-header -->
-                        <div class="card-body">
-                            <div class="row">
-                                <button type="button" class="btn btn-primary btn-sm mb-3 float-right ml-auto"
-                                    data-toggle="modal" data-target="#modal-tambah">
-                                    + Submit Lagu
-                                </button>
-                            </div>
-                            <hr>
-                            @if ($data->count() > 0)
-                                <div class="row">
+                    <!-- /.card-header -->
+                    {{-- <div class="card-body"> --}}
+                    <center>
+                        {{-- <div class="row"> --}}
+                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                            data-target="#modal-tambah">
+                            Submit Lagu Sekarang
+                        </button>
+                        {{-- </div> --}}
+                    </center>
+
+                    <hr>
+                    @if ($data->count() > 0)
+                        {{-- <div class="row">
                                     <div class="col-12">
                                         <center>
                                             <h1><strong>List Lagu Anda</strong></h1>
                                         </center>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    @foreach ($data as $item)
-                                        <div class="col-md-3 col-sm-6 col-6">
-                                            <div class="card" style="width:100%; margin:20px 0 24px 0">
-                                                <img class="card-img-top"
-                                                    src="{{ asset('files/artwork/' . $item->artwork) }}" alt="image"
-                                                    style="width:100%; @media only screen and (max-width: 600px) {width: 150px;}">
-                                                <div class="card-body text-center">
-                                                    <h2 class="card-title" style="font-size: 18px">
-                                                        {{ $item->judul_rilisan }}</h2>
-                                                    <p class="card-text">
-                                                        @if ($item->status == 1)
-                                                            <span class="badge badge-success">RILIS</span>
-                                                        @else
-                                                            <span class="badge badge-warning">BELUM RILIS</span>
-                                                        @endif
-                                                    </p>
-                                                    <div class="d-flex justify-content-center">
-                                                        <a href="{{ route('submit.show', $item->id) }}"
-                                                            class="btn btn-info btn-sm" target="_blank"><i
-                                                                class="fas fa-eye"></i></a>
-                                                        <a href="{{ $item->url_play }}" target="_blank"
-                                                            class="btn btn-success btn-sm ml-2"><i
-                                                                class="fas fa-play"></i></a>
-                                                        <button data-id="{{ $item->id }}"
-                                                            class="btn btn-danger btn-sm ml-2"><i
-                                                                class="fas fa-trash"></i></button>
-                                                    </div>
-                                                </div>
+                                </div> --}}
+                        <div class="row">
+                            @foreach ($data as $item)
+                                <div class="col-md-3 col-sm-6 col-6">
+                                    <div class="card" style="width:100%; margin:20px 0 24px 0">
+                                        <img class="card-img-top" src="{{ asset('files/artwork/' . $item->artwork) }}"
+                                            alt="image"
+                                            style="width:100%; @media only screen and (max-width: 600px) {width: 150px;}">
+                                        <div class="card-body text-center">
+                                            <h2 class="card-title" style="font-size: 18px">
+                                                {{ $item->judul_rilisan }}</h2>
+                                            <p class="card-text">
+                                                @if ($item->status == 1)
+                                                    <span class="badge badge-success">RILIS</span>
+                                                @else
+                                                    <span class="badge badge-warning">BELUM RILIS</span>
+                                                @endif
+                                            </p>
+                                            <div class="d-flex justify-content-center">
+                                                <a href="{{ route('submit.show', $item->id) }}" class="btn btn-info btn-sm"
+                                                    target="_blank"><i class="fas fa-eye"></i></a>
+                                                <a href="{{ $item->url_play }}" target="_blank"
+                                                    class="btn btn-success btn-sm ml-2"><i class="fas fa-play"></i></a>
+                                                <button data-id="{{ $item->id }}" class="btn btn-danger btn-sm ml-2"><i
+                                                        class="fas fa-trash"></i></button>
                                             </div>
                                         </div>
-                                    @endforeach
+                                    </div>
                                 </div>
-                            @else
-                                <div class="alert alert-info" role="alert">
-                                    Belum ada submit lagu
-                                </div>
-                            @endif
+                            @endforeach
                         </div>
-                        <!-- /.card-body -->
-                    </div>
+                    @else
+                        <div class="alert alert-info" role="alert">
+                            Belum ada submit lagu
+                        </div>
+                    @endif
+                    {{-- </div> --}}
+                    <!-- /.card-body -->
+                    {{-- </div> --}}
                 </div>
             </div>
         </div><!-- /.container-fluid -->

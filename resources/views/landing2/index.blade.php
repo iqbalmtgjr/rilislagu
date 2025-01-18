@@ -28,7 +28,7 @@
                                 di sini</h5>
                             <h1 data-caption-animate="fadeInUp" data-caption-delay="200">Rilisan Kami</h1>
                             <div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="300"><a
-                                    class="button button-modern button-custom-size-1" href="/rilisan-terbaru">Cek
+                                    class="button button-modern button-custom-size-1" href="/rilis-terbaru">Cek
                                     Sekarang</a>
                             </div>
                         </div>
@@ -46,8 +46,8 @@
                             <h1 data-caption-animate="fadeInUp" data-caption-delay="200">Karya Mu <br> Aset Mu
                             </h1>
                             <div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="300"><a
-                                    class="button button-modern button-custom-size-1" href="/login">Jadikan hak
-                                    cipta</a></div>
+                                    class="button button-modern button-custom-size-1" href="/login">Rilis Sekarang</a>
+                            </div>
                         </div>
                     </div>
                 </div>

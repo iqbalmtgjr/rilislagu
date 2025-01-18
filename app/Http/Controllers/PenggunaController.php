@@ -25,6 +25,7 @@ class PenggunaController extends Controller
         ]);
 
         if ($validator->fails()) {
+            toastr()->error('Ada kesalahan inputan', 'Gagal');
             return back()->withErrors($validator)->withInput();
         }
 

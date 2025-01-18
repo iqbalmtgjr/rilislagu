@@ -175,7 +175,7 @@
                         <!-- /.card-body -->
                     </div>
                     <div class="text-left mb-3 mt-3">
-                        <a href="{{ url('rilis-lagu') }}" class="btn btn-secondary"><i
+                        <a href="{{ url('submit') }}" class="btn btn-secondary"><i
                                 class="fas fa-arrow-left mr-2"></i>Kembali</a>
                     </div>
                 </div>

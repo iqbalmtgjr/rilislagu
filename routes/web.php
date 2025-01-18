@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BeritaController;
@@ -9,6 +10,7 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\SubmitlaguController;
+use App\Http\Controllers\KelolapaketController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +22,13 @@ use App\Http\Controllers\SubmitlaguController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+//maintanance
+Route::get('/optimize-clear', function () {
+    Artisan::call('optimize:clear');
+    return 'Optimization cache cleared!';
+});
+
 
 // Landing Page
 // Route::get('/', [LandingController::class, 'index']);
@@ -65,6 +74,13 @@ Route::group(['middleware' => 'isLogin'], function () {
         Route::put('/pengguna/update', [PenggunaController::class, 'update'])->name('pengguna.update');
         Route::get('/pengguna/destroy/{id}', [PenggunaController::class, 'destroy'])->name('pengguna.destroy');
 
+        //paket
+        Route::get('/kelola-paket', [KelolapaketController::class, 'index']);
+        Route::post('/kelola-paket/post', [KelolapaketController::class, 'store'])->name('paket.tambah');
+        Route::get('/kelola-paket/edit/{id}', [KelolapaketController::class, 'edit'])->name('paket.edit');
+        Route::put('/kelola-paket/update', [KelolapaketController::class, 'update'])->name('paket.update');
+        Route::get('/kelola-paket/destroy/{id}', [KelolapaketController::class, 'destroy'])->name('paket.destroy');
+
         // berita
         Route::get('/kelola-berita', [BeritaController::class, 'index']);
         Route::get('/kelola-berita/tambah', [BeritaController::class, 'create']);
@@ -80,10 +96,13 @@ Route::group(['middleware' => 'isLogin'], function () {
     });
 
     Route::group(['middleware' => ['checkRole:user']], function () {
+        // lihat paket lagu
+        Route::get('/lihat-paket', [KelolapaketController::class, 'lihatpaket'])->name('lihat.paket');
+
         // submit lagu sisi user
         Route::get('/submit', [SubmitlaguController::class, 'index'])->name('submit');
         Route::post('/submit', [SubmitlaguController::class, 'store'])->name('submit.store');
-        Route::get('/submit/show', [SubmitlaguController::class, 'show'])->name('submit.show');
+        Route::get('/submit/show/{id}', [SubmitlaguController::class, 'show'])->name('submit.show');
         Route::get('/submit/destroy', [SubmitlaguController::class, 'destroy'])->name('submit.destroy');
     });
 

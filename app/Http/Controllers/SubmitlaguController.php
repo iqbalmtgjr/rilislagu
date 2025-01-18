@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Paket;
 use App\Models\Submitlagu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -11,12 +12,14 @@ class SubmitlaguController extends Controller
     public function indexAdmin()
     {
         $data = Submitlagu::latest()->get();
-        return view('admin.rilis-lagu.index', compact('data'));
+        $paket = Paket::all();
+        return view('admin.rilis-lagu.index', compact('data', 'paket'));
     }
     public function index()
     {
         $data = Submitlagu::where('user_id', auth()->user()->id)->latest()->get();
-        return view('admin.submitlagu.index', compact('data'));
+        $paket = Paket::all();
+        return view('admin.submitlagu.index', compact('data', 'paket'));
     }
 
     public function store(Request $request)
@@ -57,7 +60,7 @@ class SubmitlaguController extends Controller
             'no_hp' => 'required|max:50',
             'jenis_layanan' => 'required|max:50',
             'upload_ktp' => 'required|mimes:jpg,jpeg,png',
-            'jasa_tambahan' => 'required|max:50',
+            // 'jasa_tambahan' => 'required|max:50',
         ]);
 
         if ($validator->fails()) {

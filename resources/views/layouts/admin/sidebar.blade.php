@@ -58,6 +58,15 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="{{ url('kelola-paket') }}"
+                            class="nav-link {{ request()->is('kelola-paket') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-box"></i>
+                            <p>
+                                Paket
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="{{ url('kelola-berita') }}"
                             class="nav-link {{ request()->is('kelola-berita*') ? 'active' : '' }}">
                             <i class="nav-icon far fa-newspaper"></i>
@@ -77,6 +86,15 @@
                     </li>
                 @endif
                 @if (auth()->user()->role == 'user')
+                    <li class="nav-item">
+                        <a href="{{ url('lihat-paket') }}"
+                            class="nav-link {{ request()->is('lihat-paket') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-music"></i>
+                            <p>
+                                Lihat Paket Harga
+                            </p>
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a href="{{ url('submit') }}" class="nav-link {{ request()->is('submit') ? 'active' : '' }}">
                             <i class="nav-icon far fa-plus-square"></i>

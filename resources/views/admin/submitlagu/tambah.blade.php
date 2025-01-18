@@ -51,13 +51,19 @@
                                 <select class="form-control @error('tipe_rilisan') is-invalid @enderror"
                                     name="tipe_rilisan">
                                     <option value="">Pilih Tipe Rilisan</option>
-                                    <option value="Single" {{ old('tipe_rilisan') == 'Single' ? 'selected' : '' }}>
+                                    @foreach ($paket as $item)
+                                        <option value="{{ $item->nama_paket }}"
+                                            {{ old('tipe_rilisan') == $item->nama_paket ? 'selected' : '' }}>
+                                            {{ $item->nama_paket }}
+                                        </option>
+                                    @endforeach
+                                    {{-- <option value="Single" {{ old('tipe_rilisan') == 'Single' ? 'selected' : '' }}>
                                         Single
                                     </option>
                                     <option value="EP" {{ old('tipe_rilisan') == 'EP' ? 'selected' : '' }}>EP
                                     </option>
                                     <option value="Album" {{ old('tipe_rilisan') == 'Album' ? 'selected' : '' }}>Album
-                                    </option>
+                                    </option> --}}
                                 </select>
                                 @error('tipe_rilisan')
                                     <div class="invalid-feedback">
@@ -564,7 +570,7 @@
                                     </div>
                                 @enderror
                             </div>
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <label for="jasa_tambahan">Jasa Tambahan</label>
                                 <input type="text"
                                     class="form-control @error('jasa_tambahan') is-invalid @enderror"
@@ -575,7 +581,7 @@
                                         {{ $message }}
                                     </div>
                                 @enderror
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
             </div>
