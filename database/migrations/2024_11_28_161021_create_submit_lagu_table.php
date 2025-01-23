@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('submit_lagu', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('paket_id')->constrained()->onDelete('cascade');
+            // $table->foreignId('paket_id')->constrained()->onDelete('cascade');
             $table->string('email');
             $table->string('judul_rilisan');
             $table->string('tipe_rilisan');

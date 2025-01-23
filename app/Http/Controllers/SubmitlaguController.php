@@ -22,6 +22,12 @@ class SubmitlaguController extends Controller
         return view('admin.submitlagu.index', compact('data', 'paket'));
     }
 
+    public function create()
+    {
+        $paket = Paket::all();
+        return view('admin.submitlagu.create', compact('paket'));
+    }
+
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [

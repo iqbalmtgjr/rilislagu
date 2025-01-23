@@ -66,8 +66,23 @@
                             </div>
                             <div class="rd-navbar-collapse">
                                 <ul class="socialite-list">
-                                    <li class="rd-nav-item {{ request()->is('login') ? 'active' : '' }}"><a
-                                            class="rd-nav-link" href="{{ url('login') }}">Login</a>
+                                    <li class="rd-nav-item">
+                                        @if (Auth::check())
+                                            <div class="dropdown">
+                                                <a class="dropdown-toggle" data-toggle="dropdown" href="#"
+                                                    role="button" aria-haspopup="true" aria-expanded="false">
+                                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item"
+                                                        href="{{ url('dashboard') }}">Dashboard</a>
+                                                    <div class="dropdown-divider"></div>
+                                                    <a class="dropdown-item" href="{{ url('logout') }}">Logout</a>
+                                                </div>
+                                            </div>
+                                        @else
+                                            <a class="rd-nav-link" href="{{ url('login') }}">Login</a>
+                                        @endif
                                     </li>
 
                                     {{-- <li><a class="icon novi-icon socialite fa-facebook" href="#"></a></li>

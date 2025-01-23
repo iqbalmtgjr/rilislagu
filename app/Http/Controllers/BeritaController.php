@@ -127,7 +127,7 @@ class BeritaController extends Controller
     public function update(Request $request, string $id)
     {
         $validator = Validator::make($request->all(), [
-            'judul' => 'required|max:50',
+            'judul' => 'required|max:255',
             'isi' => 'required',
             'gambar' => 'mimes:jpeg,jpg,png',
         ]);

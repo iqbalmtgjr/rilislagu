@@ -39,6 +39,10 @@ Route::get('/paket-harga', [LandingController::class, 'paketHarga']);
 Route::get('/kontak', [LandingController::class, 'kontak']);
 Route::get('/artikel', [BeritaController::class, 'artikel']);
 Route::get('/artikel/{slug}', [BeritaController::class, 'beritaSatuan'])->name('berita.show');
+Route::get('about', [LandingController::class, 'about']);
+Route::get('contact', [LandingController::class, 'contact']);
+Route::post('contact', [LandingController::class, 'contactstrore'])->name('contact.store');
+
 
 Route::group(['middleware' => 'isTamu'], function () {
     Route::get('/daftar', [AuthController::class, 'register'])->name('register');
@@ -101,6 +105,7 @@ Route::group(['middleware' => 'isLogin'], function () {
 
         // submit lagu sisi user
         Route::get('/submit', [SubmitlaguController::class, 'index'])->name('submit');
+        Route::get('/submit/create', [SubmitlaguController::class, 'create'])->name('submit.create');
         Route::post('/submit', [SubmitlaguController::class, 'store'])->name('submit.store');
         Route::get('/submit/show/{id}', [SubmitlaguController::class, 'show'])->name('submit.show');
         Route::get('/submit/destroy', [SubmitlaguController::class, 'destroy'])->name('submit.destroy');

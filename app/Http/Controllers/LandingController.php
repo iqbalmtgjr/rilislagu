@@ -33,4 +33,31 @@ class LandingController extends Controller
     {
         return view('landing2.paket-harga');
     }
+
+    public function about()
+    {
+        return view('landing2.about');
+    }
+
+    public function contact()
+    {
+        return view('landing2.contact');
+    }
+
+    public function contactstrore(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'judul' => 'required|max:255',
+            'isi' => 'required',
+            'gambar' => 'mimes:jpeg,jpg,png',
+        ]);
+
+        if ($validator->fails()) {
+            toastr()->error('Ada kesalahan inputan', 'Gagal');
+            return redirect()
+                ->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+    }
 }

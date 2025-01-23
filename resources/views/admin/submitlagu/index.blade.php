@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Submit Lagu</h1>
+                    <h1 class="m-0">My Release</h1>
                     {{-- <a href="#" data-toggle="popover" title="Popover Header" data-placement="top"
                         data-content="Some content inside the popover">Toggle popover</a> --}}
                 </div>
@@ -29,10 +29,11 @@
                     {{-- <div class="card-body"> --}}
                     <center>
                         {{-- <div class="row"> --}}
-                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                        {{-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
                             data-target="#modal-tambah">
                             Submit Lagu Sekarang
-                        </button>
+                        </button> --}}
+                        <a href="{{ url('/submit/create') }}" class="btn btn-primary btn-lg">Submit Lagu Sekarang</a>
                         {{-- </div> --}}
                     </center>
 

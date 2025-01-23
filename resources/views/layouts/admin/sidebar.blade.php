@@ -99,7 +99,7 @@
                         <a href="{{ url('submit') }}" class="nav-link {{ request()->is('submit') ? 'active' : '' }}">
                             <i class="nav-icon far fa-plus-square"></i>
                             <p>
-                                Submit Lagu
+                                My Release
                             </p>
                         </a>
                     </li>

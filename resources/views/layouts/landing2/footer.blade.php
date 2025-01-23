@@ -8,10 +8,11 @@
                     \ Design by <a href="https://www.templatemonster.com/">TemplateMonster</a>
                 </p>
             </div>
-            <div class="col-sm-6">
-                <div class="footer-contact"><a href="#">
-                        <div class="icon novi-icon mdi mdi-email-outline"></div>Contact Me
-                    </a></div>
+            <div class="col-sm-6 text-right">
+                <div class="footer-contact">
+                    <a href="about">About</a>
+                    <a href="contact">Contact Us</a>
+                </div>
             </div>
         </div>
     </div>
